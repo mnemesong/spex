@@ -98,7 +98,7 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     static function getAvailableTypes(): array
     {

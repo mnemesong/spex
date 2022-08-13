@@ -23,12 +23,13 @@ use Webmozart\Assert\Assert;
  */
 class NumericValueComparingSpecification extends AbstractValueComparingSpecification
 {
+    protected float $value;
     /**
      * @param string $type
      * @param string $field
-     * @param mixed $value
+     * @param float $value
      */
-    public function __construct(string $type, string $field, $value)
+    public function __construct(string $type, string $field, float $value)
     {
         Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
         Assert::numeric($value, 'Value should be numeric');
@@ -38,7 +39,15 @@ class NumericValueComparingSpecification extends AbstractValueComparingSpecifica
     }
 
     /**
-     * @return array
+     * @return float
+     */
+    public function getValue(): float
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return string[]
      */
     static function getAvailableTypes(): array
     {

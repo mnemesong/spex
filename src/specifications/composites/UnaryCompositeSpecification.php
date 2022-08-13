@@ -44,7 +44,7 @@ class UnaryCompositeSpecification extends AbstractCompositeSpecification
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getType(): string
     {
@@ -75,6 +75,9 @@ class UnaryCompositeSpecification extends AbstractCompositeSpecification
         return false;
     }
 
+    /**
+     * @return string[]
+     */
     static function getAvailableTypes(): array
     {
         return [

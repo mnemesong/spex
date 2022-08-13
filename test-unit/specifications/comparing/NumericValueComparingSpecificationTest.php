@@ -39,16 +39,10 @@ class NumericValueComparingSpecificationTest extends NonCompositeSpecificationTe
         $spec = new NumericValueComparingSpecification('or', 'age', 22);
     }
 
-    public function testConstructException3()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $spec = new NumericValueComparingSpecification('n=', 'age', null);
-    }
-
     public function testConstructException4()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $spec = new NumericValueComparingSpecification('or', 'age', 'afaf');
+        $spec = new NumericValueComparingSpecification('or', 'age', 11.11);
     }
 
     public function testIsComposite()

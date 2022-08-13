@@ -56,9 +56,18 @@ interface SpecificationInterface
     const TYPE_AND = 'and';
     const TYPE_OR = 'or';
 
+    /**
+     * @return bool
+     */
     public function isComposite(): bool;
 
+    /**
+     * @return string
+     */
     public function getType(): string;
 
+    /**
+     * @return string[]
+     */
     public static function getAvailableTypes(): array;
 }

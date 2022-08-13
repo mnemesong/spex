@@ -35,6 +35,7 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
             . "expect one of: " . implode(", ", static::getAvailableTypes()));
         Assert::minCount($specs, 2, '"And" and "Or" specification should contains 2 or more child '
             . 'specifications');
+        /* @phpstan-ignore-next-line */
         Assert::allSubclassOf($specs, SpecificationInterface::class,
             'Every object should be class implemented SpecificationInterface');
         $this->type = $type;
@@ -70,7 +71,7 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
     }
 
     /**
-     * @param array $specs
+     * @param SpecificationInterface[] $specs
      * @return $this
      */
     public function addMany(array $specs): self
@@ -104,6 +105,9 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
         return true;
     }
 
+    /**
+     * @return string[]
+     */
     static function getAvailableTypes(): array
     {
         return [

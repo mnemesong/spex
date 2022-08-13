@@ -32,8 +32,8 @@ class Sp
      * Express specification
      *
      * @param string $type
-     * @param $opt1
-     * @param $opt2
+     * @param string|SpecificationInterface|SpecificationInterface[] $opt1
+     * @param mixed $opt2
      * @return SpecificationInterface
      */
     public static function ex(string $type, $opt1, $opt2 = null): SpecificationInterface
@@ -55,7 +55,7 @@ class Sp
                 . ' should be string');
             Assert::numeric($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be numeric');
-            return new NumericValueComparingSpecification($type, $opt1, $opt2);
+            return new NumericValueComparingSpecification($type, $opt1, floatval($opt2));
         } elseif (in_array($type, StringValueComparingSpecification::getAvailableTypes())) {
             Assert::string($opt1, 'For "' . $type . '" specification first option parameter'
                 . ' should be string');
@@ -72,29 +72,23 @@ class Sp
                 . ' should be string');
             return new UnaryValueSpecification($type, $opt1);
         } elseif (in_array($type, MultipleCompositeSpecification::getAvailableTypes())) {
-            if (is_array($opt1)) {
-                Assert::null($opt2, 'For "' . $type . '" specification second option parameter'
-                    . ' should be null, if first is array.');
-                Assert::allSubclassOf($opt1, SpecificationInterface::class, 'For "' . $type
-                    . '" specification first option parameter should be array of SpecificationInterface '
-                    . 'implemented objects. Or both parameters should be SpecificationInterface '
-                    . 'implemented objects.');
-                return new MultipleCompositeSpecification($type, $opt1);
-            }
-            Assert::subclassOf($opt1, SpecificationInterface::class, 'For "' . $type
+            Assert::isArray($opt1);
+            Assert::allObject($opt1);
+            Assert::null($opt2, 'For "' . $type . '" specification second option parameter'
+                . ' should be null, if first is array.');
+            /* @phpstan-ignore-next-line  */
+            Assert::allSubclassOf($opt1, SpecificationInterface::class, 'For "' . $type
                 . '" specification first option parameter should be array of SpecificationInterface '
                 . 'implemented objects. Or both parameters should be SpecificationInterface '
                 . 'implemented objects.');
-            Assert::subclassOf($opt2, SpecificationInterface::class, 'For "' . $type
-                . '" if first parameter is object implemented SpecificationInterface, second parameter '
-                . 'should be implemented SpecificationInterface object too.');
-            return new MultipleCompositeSpecification($type, [$opt1, $opt2]);
+            return new MultipleCompositeSpecification($type, $opt1);
         } elseif (in_array($type, UnaryCompositeSpecification::getAvailableTypes())) {
             Assert::subclassOf($opt1, SpecificationInterface::class, 'For "' . $type
                 . '" specification first option parameter should be SpecificationInterface '
                 . 'implemented object.');
             Assert::null($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be null');
+            Assert::object($opt1, "Expects first option parameter will be object.");
             return new UnaryCompositeSpecification($type, $opt1);
         }
         throw new InvalidSpecificationTypeException();
@@ -102,8 +96,8 @@ class Sp
 
     /**
      * @param string $type
-     * @param $opt1
-     * @param $opt2
+     * @param string|SpecificationInterface|SpecificationInterface[] $opt1
+     * @param mixed $opt2
      * @return SpecificationInterface
      */
     public function express(string $type, $opt1, $opt2 = null): SpecificationInterface

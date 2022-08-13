@@ -9,7 +9,6 @@ namespace Mnemesong\Spex\specifications\abstracts;
 abstract class AbstractValueComparingSpecification extends AbstractNonCompositeSpecification
 {
     protected string $field;
-    protected $value;
     protected string $type;
 
     /**
@@ -47,14 +46,6 @@ abstract class AbstractValueComparingSpecification extends AbstractNonCompositeS
     public function getType(): string
     {
         return $this->type;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**

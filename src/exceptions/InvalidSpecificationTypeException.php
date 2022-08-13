@@ -8,5 +8,6 @@ namespace Mnemesong\Spex\exceptions;
  */
 class InvalidSpecificationTypeException extends \InvalidArgumentException
 {
+    /* @phpstan-ignore-next-line */
     protected $message = 'Unknown specification type';
 }

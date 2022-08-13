@@ -69,23 +69,25 @@ class SpTest extends TestCase
         ]);
         $this->assertEquals($spec, new MultipleCompositeSpecification('and', [
             new UnaryValueSpecification('null', 'responsible'),
-            new StringValueComparingSpecification('s=', 'age', 18),
+            new StringValueComparingSpecification('s=', 'age', '18'),
             new ColumnsComparingSpecification('c!=', 'date', 'date2'),
         ]));
 
         $sp = new Sp();
-        $spec = $sp->express('or', Sp::ex('null', 'responsible'), Sp::ex('s=', 'age', 18));
+        $spec = $sp->express('or', [
+            Sp::ex('null', 'responsible'), Sp::ex('s=', 'age', '18')
+        ]);
         $this->assertEquals($spec, new MultipleCompositeSpecification('or', [
             new UnaryValueSpecification('null', 'responsible'),
-            new StringValueComparingSpecification('s=', 'age', 18),
+            new StringValueComparingSpecification('s=', 'age', '18'),
         ]));
     }
 
     public function testUnaryCompositeSpecificationBuild()
     {
-        $spec = Sp::ex('!', Sp::ex('s=', 'age', 18));
+        $spec = Sp::ex('!', Sp::ex('s=', 'age', '18'));
         $this->assertEquals($spec, new UnaryCompositeSpecification('!',
-            new StringValueComparingSpecification('s=', 'age', 18)));
+            new StringValueComparingSpecification('s=', 'age', '18')));
     }
 
 }

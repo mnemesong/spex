@@ -18,19 +18,21 @@ use Webmozart\Assert\Assert;
 class ArrayComparingSpecification extends AbstractNonCompositeSpecification
 {
     protected string $field;
+    /* @var string[] $value */
+    /* @phpstan-ignore-next-line */
     protected array $value;
     protected string $type;
 
     /**
      * @param string $type
      * @param string $field
-     * @param array $value
+     * @param string[] $value
      */
     public function __construct(string $type, string $field, array $value)
     {
         Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
         $this->field = $field;
-        $this->value = $value;
+        $this->value = array_map(fn($item) => (strval($item)), $value);
         $this->type = $type;
     }
 
@@ -75,7 +77,7 @@ class ArrayComparingSpecification extends AbstractNonCompositeSpecification
     }
 
     /**
-     * @return string
+     * @return string[]
      */
     public function getValue(): array
     {
@@ -91,7 +93,7 @@ class ArrayComparingSpecification extends AbstractNonCompositeSpecification
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     static function getAvailableTypes(): array
     {

@@ -28,17 +28,15 @@ use Webmozart\Assert\Assert;
  */
 class StringValueComparingSpecification extends AbstractValueComparingSpecification
 {
+    protected string $value;
+
     /**
      * @param string $type
      * @param string $field
-     * @param mixed $value
+     * @param string $value
      */
-    public function __construct(string $type, string $field, $value)
+    public function __construct(string $type, string $field, string $value)
     {
-        if(is_numeric($value)) {
-            $value = strval($value);
-        }
-        Assert::string($value, 'Incorrect type of value: except string or value');
         Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
         $this->type = $type;
         $this->field = $field;
@@ -46,7 +44,15 @@ class StringValueComparingSpecification extends AbstractValueComparingSpecificat
     }
 
     /**
-     * @return array
+     * @return string
+     */
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return string[]
      */
     static function getAvailableTypes(): array
     {
