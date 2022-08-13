@@ -26,11 +26,11 @@ class SpTest extends TestCase
 
     public function testFieldsComparingSpecification()
     {
-        $spec = Sp::ex('c!=', 'date', 'date2');
-        $this->assertEquals($spec, new ColumnsComparingSpecification('c!=', 'date', 'date2'));
+        $spec = Sp::ex('cs!=', 'date', 'date2');
+        $this->assertEquals($spec, new ColumnsComparingSpecification('cs!=', 'date', 'date2'));
 
-        $spec = (new Sp())->express('c>', 'date', 'date2');
-        $this->assertEquals($spec, new ColumnsComparingSpecification('c>', 'date', 'date2'));
+        $spec = (new Sp())->express('cs>', 'date', 'date2');
+        $this->assertEquals($spec, new ColumnsComparingSpecification('cs>', 'date', 'date2'));
     }
 
     public function testNumericValueComparingSpecification()
@@ -65,12 +65,12 @@ class SpTest extends TestCase
         $spec = Sp::ex('and', [
             Sp::ex('null', 'responsible'),
             Sp::ex('s=', 'age', 18),
-            Sp::ex('c!=', 'date', 'date2'),
+            Sp::ex('cs!=', 'date', 'date2'),
         ]);
         $this->assertEquals($spec, new MultipleCompositeSpecification('and', [
             new UnaryValueSpecification('null', 'responsible'),
             new StringValueComparingSpecification('s=', 'age', '18'),
-            new ColumnsComparingSpecification('c!=', 'date', 'date2'),
+            new ColumnsComparingSpecification('cs!=', 'date', 'date2'),
         ]));
 
         $sp = new Sp();

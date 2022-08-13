@@ -35,15 +35,15 @@ interface SpecificationInterface
     const TYPE_IN = 'in';
 
     //binary fields-comparing
-    const TYPE_COLUMN_EQUALS = 'c=';
-    const TYPE_COLUMN_NOT_EQUALS = 'c!=';
-    const TYPE_COLUMN_EQUALS_NULL_SAFE = 'c=?';
-    const TYPE_COLUMN_NOT_EQUALS_NULL_SAFE = 'c!=?';
-    const TYPE_COLUMN_MORE_THAN = 'c>';
-    const TYPE_COLUMN_NOT_MORE_THAN = 'c<=';
-    const TYPE_COLUMN_LESS_THAN = 'c<';
-    const TYPE_COLUMN_NOT_LESS_THAN = 'c>=';
-    const TYPE_COLUMN_LIKE = 'clike';
+    const TYPE_COLUMN_AS_STRING_EQUALS = 'cs=';
+    const TYPE_COLUMN_AS_STRING_NOT_EQUALS = 'cs!=';
+    const TYPE_COLUMN_AS_STRING_EQUALS_NULL_SAFE = 'cs=?';
+    const TYPE_COLUMN_AS_STRING_NOT_EQUALS_NULL_SAFE = 'cs!=?';
+    const TYPE_COLUMN_AS_STRING_MORE_THAN = 'cs>';
+    const TYPE_COLUMN_AS_STRING_NOT_MORE_THAN = 'cs<=';
+    const TYPE_COLUMN_AS_STRING_LESS_THAN = 'cs<';
+    const TYPE_COLUMN_AS_STRING_NOT_LESS_THAN = 'cs>=';
+    const TYPE_COLUMN_AS_STRING_LIKE = 'clike';
 
     //unary
     const TYPE_EMPTY = 'empty';

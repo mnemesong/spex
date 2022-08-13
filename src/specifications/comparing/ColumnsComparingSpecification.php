@@ -103,15 +103,15 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
     static function getAvailableTypes(): array
     {
         return [
-            self::TYPE_COLUMN_EQUALS,
-            self::TYPE_COLUMN_NOT_EQUALS,
-            self::TYPE_COLUMN_EQUALS_NULL_SAFE,
-            self::TYPE_COLUMN_NOT_EQUALS_NULL_SAFE,
-            self::TYPE_COLUMN_MORE_THAN,
-            self::TYPE_COLUMN_NOT_MORE_THAN,
-            self::TYPE_COLUMN_LESS_THAN,
-            self::TYPE_COLUMN_NOT_LESS_THAN,
-            self::TYPE_COLUMN_LIKE,
+            self::TYPE_COLUMN_AS_STRING_EQUALS,
+            self::TYPE_COLUMN_AS_STRING_NOT_EQUALS,
+            self::TYPE_COLUMN_AS_STRING_EQUALS_NULL_SAFE,
+            self::TYPE_COLUMN_AS_STRING_NOT_EQUALS_NULL_SAFE,
+            self::TYPE_COLUMN_AS_STRING_MORE_THAN,
+            self::TYPE_COLUMN_AS_STRING_NOT_MORE_THAN,
+            self::TYPE_COLUMN_AS_STRING_LESS_THAN,
+            self::TYPE_COLUMN_AS_STRING_NOT_LESS_THAN,
+            self::TYPE_COLUMN_AS_STRING_LIKE,
         ];
     }
 }
