@@ -2,6 +2,9 @@
 The documentation is written in two languages: Russian and English.
 Документация написана на двух языках: русском и английском.
 <hr>
+[![Latest Stable Version](http://poser.pugx.org/mnemesong/spex/v)](https://packagist.org/packages/mnemesong/spex)
+[![PHP Version Require](http://poser.pugx.org/mnemesong/spex/require/php)](https://packagist.org/packages/mnemesong/spex)
+[![License](http://poser.pugx.org/mnemesong/spex/license)](https://packagist.org/packages/mnemesong/spex)
 
 <h2>General description / Общее описание</h2>
 
