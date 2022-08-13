@@ -18,11 +18,11 @@ use Webmozart\Assert\Assert;
 /**
  * ENG: Auxiliary class for fast and convenient expression of specifications.
  * For example, the expression: Sp::ex('c=', 'field1', 'field2') is equivalent to the Mysql specification: WHERE `field1`=`field2`.
- * A complete list of specifications can be found in the interface Pantagruel74\HalleyOrm\specifications\SpecificationInterface
+ * A complete list of specifications can be found in the interface \specifications\SpecificationInterface
  *
  * RUS: Вспомогательный класс для быстрого и удобного выражения спецификаций.
  * Например выражение: Sp::ex('c=', 'field1', 'field2') эквивалентно Mysql спецификации: WHERE `field1`=`field2`.
- * Полный список спецификаций можно посмотреть в интерфейсе Pantagruel74\HalleyOrm\specifications\SpecificationInterface
+ * Полный список спецификаций можно посмотреть в интерфейсе \specifications\SpecificationInterface
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */

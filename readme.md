@@ -21,15 +21,13 @@ records from storage). For quick construction, use Sp::ex() builder.</p>
 <hr>
 
 <h2>Installation / Установка</h2>
-<p>composer require "pantagruel74/halley-spex"</p>
+<p>composer require "mnemesong/spex"</p>
 <hr>
 
 <h2>Specifications / Спецификации</h2>
 
 <h3>ENG:</h3>
-<p>Specifications allow you to specify a condition for searching or selecting records, including logically complex ones.<br>
-The pantagruel74/halley-orm-core package implements a wide branched specification object model depending
-on the type, context, and expected way of comparison.</p>
+<p>Specifications allow you to specify a condition for searching or selecting records, including logically complex ones.</p>
 
 <h4>Specifier Sp::ex</h4>
 <p>The ex() method of class Sp allows you to quickly express any specification of various types. Its general syntax looks like
@@ -128,9 +126,7 @@ as follows</p>
 <p><code>Sp::ex("!", Sp::ex("c=", "managerUuid", "customerUuid"))</code></p>
 
 <h3>RUS:</h3>
-<p>Спецификации позволяют указывать условие для поиска или отбора записей, в том числе логически сложные.<br>
-В пакете pantagruel74/halley-orm-core реализована широкая разветвленная объектная модель спецификаций в зависимости
-от типа, контекста, и ожидаемого способа сравнения.</p>
+<p>Спецификации позволяют указывать условие для поиска или отбора записей, в том числе логически сложные.</p>
 
 <h4>Выразитель спецификаций Sp::ex</h4>
 <p>Метод ex() класса Sp позволяет быстро выражать любые спецификации различных типов. Его общий синтаксис выгляди
