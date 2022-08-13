@@ -3,9 +3,7 @@
     "description": "The package provides objects and an interface for building specifications (describes the conditions for fetching records from storage)",
     "type": "library",
     "require-dev": {
-        "php": ">=7.4",
-        "phpunit/phpunit": "*",
-        "webmozart/assert": "*"
+        "phpunit/phpunit": "*"
     },
     "license": "MIT",
     "autoload": {
@@ -24,5 +22,8 @@
         "test:unit": "phpunit test-unit"
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">=7.4",
+        "webmozart/assert": "1.11.*"
+    }
 }
