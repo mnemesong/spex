@@ -1,4 +1,4 @@
-<h1>pantagruel74/halley-orm-core</h1>
+<h1>mnemesong/spex</h1>
 The documentation is written in two languages: Russian and English.
 Документация написана на двух языках: русском и английском.
 <hr>
@@ -6,10 +6,10 @@ The documentation is written in two languages: Russian and English.
 <h2>General description / Общее описание</h2>
 
 <h3>ENG:</h3>
-<p>The package provides objects and an interface for building specifications (describes the conditions for fetching 
+<p>The package provides objects and an interface for expression of specifications (describes the conditions for fetching 
 records from storage). For quick construction, use Sp::ex() builder.</p>
 <h3>RUS:</h3>
-<p>Пакет предоставляет объекты и интерфейс для построения спецификаций (описывают услоние выборки записей из хранилища).
+<p>Пакет предоставляет объекты и интерфейс для выражения спецификаций (описывают услоние выборки записей из хранилища).
 Для быстрого построения используется билдер Sp::ex()</p>
 <hr>
 
