@@ -35,15 +35,23 @@ interface SpecificationInterface
     const TYPE_IN = 'in';
 
     //binary fields-comparing
-    const TYPE_COLUMN_AS_STRING_EQUALS = 'cs=';
-    const TYPE_COLUMN_AS_STRING_NOT_EQUALS = 'cs!=';
-    const TYPE_COLUMN_AS_STRING_EQUALS_NULL_SAFE = 'cs=?';
-    const TYPE_COLUMN_AS_STRING_NOT_EQUALS_NULL_SAFE = 'cs!=?';
-    const TYPE_COLUMN_AS_STRING_MORE_THAN = 'cs>';
-    const TYPE_COLUMN_AS_STRING_NOT_MORE_THAN = 'cs<=';
-    const TYPE_COLUMN_AS_STRING_LESS_THAN = 'cs<';
-    const TYPE_COLUMN_AS_STRING_NOT_LESS_THAN = 'cs>=';
-    const TYPE_COLUMN_AS_STRING_LIKE = 'clike';
+    const TYPE_COLUMN_STR_EQUALS = 'cs=';
+    const TYPE_COLUMN_STR_NOT_EQUALS = 'cs!=';
+    const TYPE_COLUMN_STR_EQUALS_NULL_SAFE = 'cs=?';
+    const TYPE_COLUMN_STR_NOT_EQUALS_NULL_SAFE = 'cs!=?';
+    const TYPE_COLUMN_STR_MORE_THAN = 'cs>';
+    const TYPE_COLUMN_STR_NOT_MORE_THAN = 'cs<=';
+    const TYPE_COLUMN_STR_LESS_THAN = 'cs<';
+    const TYPE_COLUMN_STR_NOT_LESS_THAN = 'cs>=';
+    const TYPE_COLUMN_STR_LIKE = 'clike';
+    const TYPE_COLUMN_NUM_EQUALS = 'cn=';
+    const TYPE_COLUMN_NUM_NOT_EQUALS = 'cn!=';
+    const TYPE_COLUMN_NUM_EQUALS_NULL_SAFE = 'cn=?';
+    const TYPE_COLUMN_NUM_NOT_EQUALS_NULL_SAFE = 'cn!=?';
+    const TYPE_COLUMN_NUM_MORE_THAN = 'cn>';
+    const TYPE_COLUMN_NUM_NOT_MORE_THAN = 'cn<=';
+    const TYPE_COLUMN_NUM_LESS_THAN = 'cn<';
+    const TYPE_COLUMN_NUM_NOT_LESS_THAN = 'cn>=';
 
     //unary
     const TYPE_EMPTY = 'empty';

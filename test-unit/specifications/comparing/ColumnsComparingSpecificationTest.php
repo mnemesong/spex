@@ -57,6 +57,22 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
         $this->assertEquals($spec->getType(), 'cs<=');
         $spec = new ColumnsComparingSpecification('clike', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'clike');
+        $spec = new ColumnsComparingSpecification('cn=', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn=');
+        $spec = new ColumnsComparingSpecification('cn!=', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn!=');
+        $spec = new ColumnsComparingSpecification('cn=?', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn=?');
+        $spec = new ColumnsComparingSpecification('cn!=?', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn!=?');
+        $spec = new ColumnsComparingSpecification('cn>', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn>');
+        $spec = new ColumnsComparingSpecification('cn>=', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn>=');
+        $spec = new ColumnsComparingSpecification('cn<', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn<');
+        $spec = new ColumnsComparingSpecification('cn<=', 'startDate', 'finishDate');
+        $this->assertEquals($spec->getType(), 'cn<=');
     }
 
     public function testIsUnary()

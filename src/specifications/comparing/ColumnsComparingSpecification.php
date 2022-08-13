@@ -103,15 +103,23 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
     static function getAvailableTypes(): array
     {
         return [
-            self::TYPE_COLUMN_AS_STRING_EQUALS,
-            self::TYPE_COLUMN_AS_STRING_NOT_EQUALS,
-            self::TYPE_COLUMN_AS_STRING_EQUALS_NULL_SAFE,
-            self::TYPE_COLUMN_AS_STRING_NOT_EQUALS_NULL_SAFE,
-            self::TYPE_COLUMN_AS_STRING_MORE_THAN,
-            self::TYPE_COLUMN_AS_STRING_NOT_MORE_THAN,
-            self::TYPE_COLUMN_AS_STRING_LESS_THAN,
-            self::TYPE_COLUMN_AS_STRING_NOT_LESS_THAN,
-            self::TYPE_COLUMN_AS_STRING_LIKE,
+            self::TYPE_COLUMN_STR_EQUALS,
+            self::TYPE_COLUMN_STR_NOT_EQUALS,
+            self::TYPE_COLUMN_STR_EQUALS_NULL_SAFE,
+            self::TYPE_COLUMN_STR_NOT_EQUALS_NULL_SAFE,
+            self::TYPE_COLUMN_STR_MORE_THAN,
+            self::TYPE_COLUMN_STR_NOT_MORE_THAN,
+            self::TYPE_COLUMN_STR_LESS_THAN,
+            self::TYPE_COLUMN_STR_NOT_LESS_THAN,
+            self::TYPE_COLUMN_STR_LIKE,
+            self::TYPE_COLUMN_NUM_EQUALS,
+            self::TYPE_COLUMN_NUM_NOT_EQUALS,
+            self::TYPE_COLUMN_NUM_EQUALS_NULL_SAFE,
+            self::TYPE_COLUMN_NUM_NOT_EQUALS_NULL_SAFE,
+            self::TYPE_COLUMN_NUM_MORE_THAN,
+            self::TYPE_COLUMN_NUM_NOT_MORE_THAN,
+            self::TYPE_COLUMN_NUM_LESS_THAN,
+            self::TYPE_COLUMN_NUM_NOT_LESS_THAN,
         ];
     }
 }
