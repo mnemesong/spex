@@ -21,7 +21,7 @@ class SpTest extends TestCase
     public function testArrayComparingSpecificationBuild()
     {
         $spec = Sp::ex('in', 'age', [20,22,24,26]);
-        $this->assertEquals($spec, new ArrayComparingSpecification('in', 'age', [20,22,24,26]));
+        $this->assertEquals($spec, new ArrayComparingSpecification('in', 'age', ['20', '22' , '24', '26']));
     }
 
     public function testFieldsComparingSpecification()
