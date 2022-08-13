@@ -1,12 +1,14 @@
 <h1>mnemesong/spex</h1>
 
+[![Latest Stable Version](http://poser.pugx.org/mnemesong/spex/v)](https://packagist.org/packages/mnemesong/spex)
+[![PHPUnit](https://github.com/mnemesong/spex/actions/workflows/php-unit.yml/badge.svg)](https://github.com/mnemesong/spex/actions/workflows/php-unit.yml)
+[![PHPStan-lvl9](https://github.com/mnemesong/spex/actions/workflows/phpstan-lvl9.yml/badge.svg)](https://github.com/mnemesong/spex/actions/workflows/phpstan-lvl9.yml)
+[![PHP Version Require](http://poser.pugx.org/mnemesong/spex/require/php)](https://packagist.org/packages/mnemesong/spex)
+[![License](http://poser.pugx.org/mnemesong/spex/license)](https://packagist.org/packages/mnemesong/spex)
+
 - The documentation is written in two languages: Russian and English.
 - Документация написана на двух языках: русском и английском.
 
-[![Latest Stable Version](http://poser.pugx.org/mnemesong/spex/v)](https://packagist.org/packages/mnemesong/spex)
-[![PHP Composer](https://github.com/mnemesong/spex/actions/workflows/php.yml/badge.svg)](https://github.com/mnemesong/spex/actions/workflows/php.yml)
-[![PHP Version Require](http://poser.pugx.org/mnemesong/spex/require/php)](https://packagist.org/packages/mnemesong/spex)
-[![License](http://poser.pugx.org/mnemesong/spex/license)](https://packagist.org/packages/mnemesong/spex)
 
 <hr>
 
