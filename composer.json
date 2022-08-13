@@ -1,0 +1,28 @@
+{
+    "name": "mnemesong/spex",
+    "description": "The package provides objects and an interface for building specifications (describes the conditions for fetching records from storage)",
+    "type": "library",
+    "require-dev": {
+        "php": ">=7.4",
+        "phpunit/phpunit": "*",
+        "webmozart/assert": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mnemesong\\Spex\\": "src/",
+            "Mnemesong\\SpexUnitTest\\": "test-unit"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pantagruel74",
+            "email": "tostar74@mail.ru"
+        }
+    ],
+    "scripts": {
+        "test:unit": "phpunit test-unit"
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
