@@ -40,38 +40,48 @@ records from storage). For quick construction, use Sp::ex() builder.</p>
 <p>Specifications allow you to specify a condition for searching or selecting records, including logically complex ones.</p>
 
 <h4>Specifier Sp::ex</h4>
-<p>The ex() method of class Sp allows you to quickly express any specification of various types. Its general syntax looks like
-as follows</p>
-<p><code>Sp::ex(&lt;spec character&gt;, &lt;column name&gt;, &lt;additional comparison parameter(column name, value or null)&gt);</code></p>
-<p>Additional type parameter depends on the specification type. There are several types of specifications:</p>
+<p>The ex() method of class Sp allows you to quickly express any specification of various types. Its general syntax looks 
+like as follows</p>
+<p><code>Sp::ex(&lt;spec character&gt;, &lt;column name&gt;, &lt;additional comparison parameter(column name, value or null)&gt);
+</code></p>
+<p>Additional type parameter depends on the specification type. There are several types of specifications:</p><br>
 
 <h4>Array comparison specifications</h4>
-<p>They have the general form: <code>Sp::ex(string &lt;spec mark&gt;, string &lt;column name&gt;, array &lt;comparison array&gt;)</code></p>
+<p>They have the general form: <code>Sp::ex(string &lt;spec mark&gt;, string &lt;column name&gt;, 
+    array &lt;comparison array&gt;)</code></p>
 <h6>Types of array comparison specifications:</h6>
 <ul>
-     <li><code>"in"</code> - checks whether the value in the column is included in the comparison array</li>
+    <li><code>"in"</code> - checks whether the value in the column is included in the comparison array</li>
 </ul>
 <h6>Example:</h6>
 <p><code>Sp::ex("in", "age", [11, 22, 33, 44, 55])</code></p>
 <br>
 
 <h4>Table column comparison specifications</h4>
-<p>They have a general form: <code>Sp::ex(string &lt;spec mark&gt;, string &lt;column name&gt;, string &lt;column name&gt;)</code></p>
+<p>Have a general form: <code>Sp::ex(string &lt;spec mark&gt;, string &lt;column name&gt;, string &lt;column name&gt;)
+</code></p>
 <h6>Table column comparison specification types:</h6>
 <ul>
-    <li><code>"c="</code> - checks the equality of values in two columns of the same table row</li>
-    <li><code>"c!="</code> - checks for inequality of values in two columns of the same table row</li>
-    <li><code>"c>"</code>, <code>"c>="</code>, <code>"c<"</code>, <code>"c<="</code>-
-        compare values in two columns of one table row</li>
-    <li><code>"clike"</code> - checks whether the value of the second column of the string is included in the first column as a substring</li>
+    <li><code>"cs="</code> - checks the equality of values in two columns of the same table row as strings 
+        (character by character)</li>
+    <li><code>"cs!="</code> - checks the inequality of values in two columns of the same table row as strings 
+        (character by character)</li>
+    <li><code>"cs>"</code>, <code>"cs>="</code>, <code>"cs<"</code>, <code>"cs<="</code>-
+        compare values in two columns of one table row as strings (character by character)</li>
+    <li><code>"clike"</code> - checks whether the value of the second column of the string is included in the first 
+        column as a substring</li>
+    <li><code>"cn="</code> - checks the equality of values in two columns of the same table row as numbers</li>
+    <li><code>"cn!="</code> - checks the inequality of values in two columns of the same table row as numbers</li>
+    <li><code>"cn>"</code>, <code>"cn>="</code>, <code>"cn<"</code>, <code>"cn<="</code> -
+        compare values in two columns of the same table row as numbers</li>
 </ul>
 <h6>Example:</h6>
 <p><code>Sp::ex("c<=", "contractsCount", "requestsCount")</code></p>
 <br>
 
 <h4>Number Comparison Specifications</h4>
-<p>They have the general form: <code>Sp::ex(string &lt;spec mark&gt;, string &lt;column name&gt;, float|int|stringNumber &lt;numerical value&gt;)
-</code></p>
+<p>They have the general form: <code>Sp::ex(string &lt;spec character&gt;, string &lt;column name&gt;, 
+float|int|stringNumber &lt;numerical value&gt;)</code></p>
 <h6>Comparison specification types with numeric value:</h6>
 <ul>
     <li><code>"n="</code> - checks for equality (not NULL-safe) of a column value with a specified numeric value</li>
@@ -84,11 +94,12 @@ as follows</p>
 <br>
 
 <h4>String comparison specifications</h4>
-<p>They have the general form: <code>Sp::ex(string &lt;spec mark&gt;, string &lt;column name&gt;, string &lt;string value&gt;)
+<p>They have the general form: <code>Sp::ex(string &lt;spec character&gt;, string &lt;column name&gt;, 
+string &lt;string value&gt;)
 </code></p>
 <h6>Comparison specification types with string value:</h6>
 <ul>
-    <li><code>"s="</code> - checks for equality (not NULL-safe) of the column value with the specified string value</li>
+    <li><code>"s="</code> - checks for equality (not NULL-safe) of a column value with the specified string value</li>
     <li><code>"s!="</code> - checks if the value of the column with the specified string value is not NULL-safe</li>
     <li><code>"s>"</code>, <code>"s>="</code>, <code>"s<"</code>, <code>"s<="</code> - compare character by character
         values of the column with the specified string value</li>
@@ -112,13 +123,14 @@ as follows</p>
 <br>
 
 <h4>Complex compound specifications</h4>
-<p>They have the general form: <code>Sp::ex(string &lt;spec mark&gt;, SpecificationInterface[] &lt;array of child specifications&gt;)
+<p>They have the general form: <code>Sp::ex(string &lt;spec mark&gt;, SpecificationInterface[] &lt;
+array of child specifications&gt;)
 </code></p>
 <h6>Types of complex compound specifications:</h6>
 <ul>
     <li><code>"and"</code> - specifications correspond to entries for which all conditions specified are met
         in child specifications</li>
-    <li><code>"and"</code> - specifications correspond to the entry for which one of the conditions specified
+    <li><code>"and"</code> - specifications correspond to the record for which one of the conditions specified will be met
         in child specifications</li>
 </ul>
 <h6>Example:</h6>
@@ -130,10 +142,11 @@ as follows</p>
 </code></p>
 <h6>Unary compound specification types:</h6>
 <ul>
-     <li><code>"!"</code> is a non-null-safe negation of a child specification.</li>
+    <li><code>"!"</code> is a non-null-safe negation of a child specification.</li>
 </ul>
 <h6>Example:</h6>
 <p><code>Sp::ex("!", Sp::ex("c=", "managerUuid", "customerUuid"))</code></p>
+<br>
 
 <h3>RUS:</h3>
 <p>Спецификации позволяют указывать условие для поиска или отбора записей, в том числе логически сложные.</p>
@@ -142,7 +155,7 @@ as follows</p>
 <p>Метод ex() класса Sp позволяет быстро выражать любые спецификации различных типов. Его общий синтаксис выгляди
 следующим образом</p>
 <p><code>Sp::ex(&lt;знак спецификации&gt;, &lt;имя колонки&gt;, &lt;доп. параметр сравнения(имя колонки, значеие или null)&gt);</code></p>
-<p>Тип доп. параметра зависит от типа спецификации. Существует несколько типов спецификаций:</p>
+<p>Тип доп. параметра зависит от типа спецификации. Существует несколько типов спецификаций:</p><br>
 
 <h4>Спецификации сравнения с массивом</h4>
 <p>Имеют общий вид: <code>Sp::ex(string &lt;знак спецификации&gt;, string &lt;имя колонки&gt;, array &lt;массив сравнения&gt;)</code></p>
@@ -158,11 +171,15 @@ as follows</p>
 <p>Имеют общий вид: <code>Sp::ex(string &lt;знак спецификации&gt;, string &lt;имя колонки&gt;, string &lt;имя колонки&gt;)</code></p>
 <h6>Типы спецификаций сравнения колонок таблицы:</h6>
 <ul>
-    <li><code>"c="</code> - проверяет равенство значений в двух колонках одной строки таблицы</li>
-    <li><code>"c!="</code> - проверяет неравенство значений в двух колонках одной строки таблицы</li>
-    <li><code>"c>"</code>, <code>"c>="</code>, <code>"c<"</code>, <code>"c<="</code> - 
-        сравнивают значений в двух колонках одной строки таблицы</li>
+    <li><code>"cs="</code> - проверяет равенство значений в двух колонках одной строки таблицы как строк (посимвольно)</li>
+    <li><code>"cs!="</code> - проверяет неравенство значений в двух колонках одной строки таблицы как строк (посимвольно)</li>
+    <li><code>"cs>"</code>, <code>"cs>="</code>, <code>"cs<"</code>, <code>"cs<="</code> - 
+        сравнивают значений в двух колонках одной строки таблицы как строк (посимвольно)</li>
     <li><code>"clike"</code> - проверяет вхождение значения второй колонки строки в первую в качестве подстроки</li>
+    <li><code>"cn="</code> - проверяет равенство значений в двух колонках одной строки таблицы как чисел</li>
+    <li><code>"cn!="</code> - проверяет неравенство значений в двух колонках одной строки таблицы как чисел</li>
+    <li><code>"cn>"</code>, <code>"cn>="</code>, <code>"cn<"</code>, <code>"cn<="</code> - 
+        сравнивают значений в двух колонках одной строки таблицы как чисел</li>
 </ul>
 <h6>Пример:</h6>
 <p><code>Sp::ex("c<=", "contractsCount", "requestsCount")</code></p>
