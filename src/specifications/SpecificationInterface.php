@@ -33,7 +33,7 @@ interface SpecificationInterface
     const TYPE_IN = 'in';
 
     //binary fields-comparing
-    const TYPE_COLUMN_STR_EQUALS_NULL_UNSAFE = 'cs=';
+    const TYPE_COLUMN_STR_EQUALS_NULL_SAFE = 'cs=';
     const TYPE_COLUMN_STR_NOT_EQUALS_NULL_SAFE = 'cs!=';
     const TYPE_COLUMN_STR_MORE_THAN = 'cs>';
     const TYPE_COLUMN_STR_NOT_MORE_THAN = 'cs<=';

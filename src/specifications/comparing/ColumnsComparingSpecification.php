@@ -103,7 +103,7 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
     static function getAvailableTypes(): array
     {
         return [
-            self::TYPE_COLUMN_STR_EQUALS_NULL_UNSAFE,
+            self::TYPE_COLUMN_STR_EQUALS_NULL_SAFE,
             self::TYPE_COLUMN_STR_NOT_EQUALS_NULL_SAFE,
             self::TYPE_COLUMN_STR_MORE_THAN,
             self::TYPE_COLUMN_STR_NOT_MORE_THAN,
