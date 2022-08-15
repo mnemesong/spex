@@ -99,6 +99,7 @@ class ArrayComparingSpecification extends AbstractNonCompositeSpecification
     {
         return [
             self::TYPE_IN,
+            self::TYPE_NOT_IN
         ];
     }
 }

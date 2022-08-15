@@ -48,6 +48,8 @@ class ArrayComparingSpecificationTest extends NonCompositeSpecificationTestTempl
     {
         $spec = new ArrayComparingSpecification('in', 'date', ['2022-12-01, 2022-11-13']);
         $this->assertEquals($spec->getType(), 'in');
+        $spec = new ArrayComparingSpecification('!in', 'date', ['2022-12-01, 2022-11-13']);
+        $this->assertEquals($spec->getType(), '!in');
     }
 
     public function testIsUnary()

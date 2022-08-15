@@ -36,6 +36,7 @@ interface SpecificationInterface
 
     //binary array-comparing
     const TYPE_IN = 'in';
+    const TYPE_NOT_IN = '!in';
 
     //binary fields-comparing
     const TYPE_COLUMN_STR_EQUALS = 'cs=';
