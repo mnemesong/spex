@@ -11,14 +11,16 @@ use Webmozart\Assert\Assert;
  * This object reflects type specifications:
  * - "s=" - Checks if the field value is equal to the string.
  * - "s!=" - Checks if the field value is not equal to the string (null-safe).
- * - "s<", "s>", "s<=", "s>=" - Comparison of the field value with a string (null-safe). The comparison is done character by character.
+ * - "s<", "s!<", "s>", "s!>", "s<=", "s>=" - Comparison of the field value with a string (null-safe).
+ *   The comparison is done character by character.
  * - "clike" - Checks for partial occurrence of a string in the field value as a substring
  *
  * RUS: Спецификация описывающая посимвольное сравнение поля со строковым значением.
  * Данный объект отражает спецификации типа:
  * - "s=" - Проверяет равенство значения поля со строкой.
  * - "s!=" - Проверяет неравенство значения поля со строкой (null-безопасное).
- * - "s<", "s>", "s<=", "s>=" - Сравнение значения поля со строкой (null-безопасное). Сравнение происходит посимвольно.
+ * - "s<", "s!<", "s>", "s!>", "s<=", "s>=" - Сравнение значения поля со строкой (null-безопасное).
+ *   Сравнение происходит посимвольно.
  * - "clike" - Проверяет частичное вхождение строки в значеие поля в виде подстроки
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
@@ -55,12 +57,15 @@ class StringValueComparingSpecification extends AbstractValueComparingSpecificat
     {
         return [
             self::TYPE_STR_EQUALS,
+            self::TYPE_STR_NOT_EQUALS,
             self::TYPE_STR_LESS,
+            self::TYPE_STR_NOT_LESS,
             self::TYPE_STR_EQUALS_OR_MORE,
             self::TYPE_STR_MORE,
+            self::TYPE_STR_NOT_MORE,
             self::TYPE_STR_EQUALS_OR_LESS,
             self::TYPE_STR_LIKE,
-            self::TYPE_STR_NOT_EQUALS
+            self::TYPE_STR_NOT_LIKE,
         ];
     }
 

@@ -16,10 +16,13 @@ interface SpecificationInterface
     const TYPE_STR_EQUALS = 's=';
     const TYPE_STR_NOT_EQUALS = 's!=';
     const TYPE_STR_MORE = 's>';
+    const TYPE_STR_NOT_MORE = 's!>';
     const TYPE_STR_EQUALS_OR_LESS = 's<=';
     const TYPE_STR_LESS = 's<';
+    const TYPE_STR_NOT_LESS = 's!<';
     const TYPE_STR_EQUALS_OR_MORE = 's>=';
     const TYPE_STR_LIKE = 'like';
+    const TYPE_STR_NOT_LIKE = '!like';
 
     //binary numeric value-comparing
     const TYPE_NUM_EQUALS = 'n=';

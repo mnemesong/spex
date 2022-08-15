@@ -45,14 +45,20 @@ class StringValueComparingSpecificationTest extends NonCompositeSpecificationTes
         $this->assertEquals($spec->getType(), 's!=');
         $spec = new StringValueComparingSpecification('s<', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 's<');
+        $spec = new StringValueComparingSpecification('s!<', 'date', '2021-05-25');
+        $this->assertEquals($spec->getType(), 's!<');
         $spec = new StringValueComparingSpecification('s>', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 's>');
+        $spec = new StringValueComparingSpecification('s!>', 'date', '2021-05-25');
+        $this->assertEquals($spec->getType(), 's!>');
         $spec = new StringValueComparingSpecification('s<=', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 's<=');
         $spec = new StringValueComparingSpecification('s>=', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 's>=');
         $spec = new StringValueComparingSpecification('like', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 'like');
+        $spec = new StringValueComparingSpecification('!like', 'date', '2021-05-25');
+        $this->assertEquals($spec->getType(), '!like');
     }
 
     public function testIsUnary()
