@@ -52,6 +52,7 @@ like as follows</p>
 <h6>Types of array comparison specifications:</h6>
 <ul>
     <li><code>"in"</code> - checks whether the value in the column is included in the comparison array</li>
+    <li><code>"!in"</code> - checks whether the value in the column is not included in the comparison array</li>
 </ul>
 <h6>Example:</h6>
 <p><code>Sp::ex("in", "age", [11, 22, 33, 44, 55])</code></p>
@@ -86,8 +87,8 @@ float|int|stringNumber &lt;numerical value&gt;)</code></p>
 <ul>
     <li><code>"n="</code> - checks for equality (not NULL-safe) of a column value with a specified numeric value</li>
     <li><code>"n!="</code> - checks for inequality (non-NULL-safe) values of a column with a specified numeric value</li>
-    <li><code>"n>"</code>, <code>"n>="</code>, <code>"n<"</code>, <code>"n<="</code> - compares
-        the value of the column with the specified numeric value</li>
+    <li><code>"n>"</code>, <code>"n!>"</code>, <code>"n>="</code>, <code>"n<"</code>, <code>"n!<"</code>, <code>"n<="</code> 
+        - compares the value of the column with the specified numeric value</li>
 </ul>
 <h6>Example:</h6>
 <p><code>Sp::ex("n=", "winsCount", "losesCount")</code></p>
@@ -101,8 +102,8 @@ string &lt;string value&gt;)
 <ul>
     <li><code>"s="</code> - checks for equality (not NULL-safe) of a column value with the specified string value</li>
     <li><code>"s!="</code> - checks if the value of the column with the specified string value is not NULL-safe</li>
-    <li><code>"s>"</code>, <code>"s>="</code>, <code>"s<"</code>, <code>"s<="</code> - compare character by character
-        values of the column with the specified string value</li>
+    <li><code>"s>"</code>, <code>"s!>"</code>, <code>"s>="</code>, <code>"s<"</code>, <code>"s!<"</code>, <code>"s<="</code> 
+        - compare character by character values of the column with the specified string value</li>
     <li><code>"like"</code> - checks if a string value is a substring of a value in a column</li>
 </ul>
 <h6>Example:</h6>
@@ -162,6 +163,7 @@ array of child specifications&gt;)
 <h6>Типы спецификаций сравнения с массивом:</h6>
 <ul>
     <li><code>"in"</code> - проверяет вхождение значения в колонке в массив сравнения</li>
+    <li><code>"!in"</code> - проверяет отсутствие вхождения значения в колонке в массив сравнения</li>
 </ul>
 <h6>Пример:</h6>
 <p><code>Sp::ex("in", "age", [11, 22, 33, 44, 55])</code></p>
@@ -192,8 +194,8 @@ array of child specifications&gt;)
 <ul>
     <li><code>"n="</code> - проверяет равенство (не NULL-безопасное) значения колонке с указанным числовым значением</li>
     <li><code>"n!="</code> - проверяет неравенство (не NULL-безопасное) значения колонке с указанным числовым значением</li>
-    <li><code>"n>"</code>, <code>"n>="</code>, <code>"n<"</code>, <code>"n<="</code> - сравнивает 
-        значения колонке с указанным числовым значением</li>
+    <li><code>"n>"</code>, <code>"n!>"</code>, <code>"n>="</code>, <code>"n<"</code>, <code>"n!<"</code>, <code>"n<="</code> 
+        - сравнивает значения колонке с указанным числовым значением</li>
 </ul>
 <h6>Пример:</h6>
 <p><code>Sp::ex("n=", "winsCount", "losesCount")</code></p>
@@ -206,8 +208,8 @@ array of child specifications&gt;)
 <ul>
     <li><code>"s="</code> - проверяет равенство (не NULL-безопасное) значения колонке с указанным строковым значением</li>
     <li><code>"s!="</code> - проверяет неравенство (не NULL-безопасное) значения колонке с указанным строковым значением</li>
-    <li><code>"s>"</code>, <code>"s>="</code>, <code>"s<"</code>, <code>"s<="</code> - сравнивает посимвольно
-        значения колонке с указанным строковым значением</li>
+    <li><code>"s>"</code>, <code>"s!>"</code>, <code>"s>="</code>, <code>"s<"</code>, <code>"s!<"</code>, <code>"s<="</code> 
+        - сравнивает посимвольно значения колонке с указанным строковым значением</li>
     <li><code>"like"</code> - проверяет вхождение строкового значения в значение в колонке в качестве подстроки</li>
 </ul>
 <h6>Пример:</h6>

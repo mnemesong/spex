@@ -9,9 +9,11 @@ use Webmozart\Assert\Assert;
 /**
  * ENG: Specification describing the comparison of a field with an array. This object reflects type specifications:
  * - "in" - checks if the field value matches one of the values from the array
+ * - "in" - checks if the field value matches no one of the values from the array
  *
  * RUS: Спецификация описывающая сравнение поля с массивом. Данный объект отражает спецификации типа:
  * - "in" - проверяет соответствие зачения поля одному из значений из массива
+ * - "in" - проверяет несоответствие зачения поля любому из значений из массива
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
