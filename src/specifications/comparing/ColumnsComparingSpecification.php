@@ -8,17 +8,22 @@ use Webmozart\Assert\Assert;
 
 /**
  * ENG: Specification describing the comparison of a field with another field. This object reflects type specifications:
- * - "c=" - Checks if two fields are equal
- * - "c!=" - Checks if the values of two fields are not equal (not null-safe: if one of the values is NULL, the other is not,
- * check will still fail)
- * - "c<", "c>", "c<=", "c>=" - Compare values of two table fields (non-null-safe)
+ * - "cs=" - Checks if the values of two fields are equal as strings (null-safe)
+ * - "cs!=" - Checks if the values of two fields are not equal as strings (null-safe)
+ * - "cs<", "cs>", "cs<=", "cs>=" - Compare values of two table fields as strings (null-safe)
+ * - "clike" - Checks the partial occurrence of the second field in the first as a substring
+ * - "cn=" - Checks if the values of two fields are equal as numbers (null-safe)
+ * - "cn!=" - Checks if the values of two fields are not equal as numbers (null-safe)
+ * - "cn<", "cn>", "cn<=", "cn>=" - Compare values of two table fields as numbers (null-safe)
  *
  * RUS: Спецификация описывающая сравнение поля с другим полем. Данный объект отражает спецификации типа:
- * - "c=" - Проверяет равенство значений двух полей
- * - "c!=" - Проверяет неравенство значений двух полей (не ноль-безопасное: если одно из значений NULL, Другое нет,
- *           все равно проверка будет не пройдена)
- * - "c<", "c>", "c<=", "c>=" - Сравнение значений двух полей таблицы (не ноль-безопасное)
+ * - "cs=" - Проверяет равенство значений двух полей как строк (null-безопасно)
+ * - "cs!=" - Проверяет неравенство значений двух полей как строк (null-безопасно)
+ * - "cs<", "cs>", "cs<=", "cs>=" - Сравнение значений двух полей таблицы как строк (null-безопасное)
  * - "clike" - Проверяет частичное вхождение второго поля в первое в виде подстроки
+ * - "cn=" - Проверяет равенство значений двух полей как чисел (null-безопасно)
+ * - "cn!=" - Проверяет неравенство значений двух полей как чисел (null-безопасно)
+ * - "cn<", "cn>", "cn<=", "cn>=" - Сравнение значений двух полей таблицы как чисел (null-безопасное)
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */

@@ -10,18 +10,15 @@ use Webmozart\Assert\Assert;
  * ENG: Specification describing a character-by-character comparison of a field with a string value.
  * This object reflects type specifications:
  * - "s=" - Checks if the field value is equal to the string.
- * - "s!=" - Checks if a field value is not equal to a string (not null-safe: if one of the values ​​is NULL,
- *           the other is not, the verification will still fail).
- * - "s<", "s>", "s<=", "s>=" - Comparison of field value with string (not null-safe). The comparison is done character
- *           by character.
+ * - "s!=" - Checks if the field value is not equal to the string (null-safe).
+ * - "s<", "s>", "s<=", "s>=" - Comparison of the field value with a string (null-safe). The comparison is done character by character.
  * - "clike" - Checks for partial occurrence of a string in the field value as a substring
  *
  * RUS: Спецификация описывающая посимвольное сравнение поля со строковым значением.
  * Данный объект отражает спецификации типа:
  * - "s=" - Проверяет равенство значения поля со строкой.
- * - "s!=" - Проверяет неравенство значения поля со строкой (не ноль-безопасное: если одно из значений NULL, Другое нет,
- *           все равно проверка будет не пройдена).
- * - "s<", "s>", "s<=", "s>=" - Сравнение значения поля со строкой (не ноль-безопасное). Сравнение происходит посимвольно.
+ * - "s!=" - Проверяет неравенство значения поля со строкой (null-безопасное).
+ * - "s<", "s>", "s<=", "s>=" - Сравнение значения поля со строкой (null-безопасное). Сравнение происходит посимвольно.
  * - "clike" - Проверяет частичное вхождение строки в значеие поля в виде подстроки
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru

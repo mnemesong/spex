@@ -9,15 +9,13 @@ use Webmozart\Assert\Assert;
 /**
  * ENG: Specification describing the comparison of a field with a number. This object reflects type specifications:
  * - "n=" - Checks if the field values are equal to the number.
- * - "n!=" - Checks if the field values are not equal to a number (not null-safe: if one of the values is NULL,
- * the other is not, check will still fail)
- * - "n<", "n>", "n<=", "n>=" - Compare field value with number (non-null-safe)
+ * - "n!=" - Checks if field values are not equal to number (null-safe)
+ * - "n<", "n>", "n<=", "n>=" - Compare field value with number (null-safe)
  *
  * RUS: Спецификация описывающая сравнение поля с числом. Данный объект отражает спецификации типа:
  * - "n=" - Проверяет равенство значений поля с числом.
- * - "n!=" - Проверяет неравенство значений поля с числом (не ноль-безопасное: если одно из значений NULL, Другое нет,
- *           все равно проверка будет не пройдена)
- * - "n<", "n>", "n<=", "n>=" - Сравнение значения поля с числом (не ноль-безопасное)
+ * - "n!=" - Проверяет неравенство значений поля с числом (null-безопасное)
+ * - "n<", "n>", "n<=", "n>=" - Сравнение значения поля с числом (null-безопасное)
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
