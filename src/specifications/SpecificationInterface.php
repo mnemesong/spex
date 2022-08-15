@@ -42,15 +42,20 @@ interface SpecificationInterface
     const TYPE_COLUMN_STR_EQUALS = 'cs=';
     const TYPE_COLUMN_STR_NOT_EQUALS = 'cs!=';
     const TYPE_COLUMN_STR_MORE = 'cs>';
+    const TYPE_COLUMN_STR_NOT_MORE = 'cs!>';
     const TYPE_COLUMN_STR_EQUALS_OR_LESS = 'cs<=';
     const TYPE_COLUMN_STR_LESS = 'cs<';
+    const TYPE_COLUMN_STR_NOT_LESS = 'cs!<';
     const TYPE_COLUMN_STR_EQUALS_OR_MORE = 'cs>=';
     const TYPE_COLUMN_STR_LIKE = 'clike';
+    const TYPE_COLUMN_STR_NOT_LIKE = 'c!like';
     const TYPE_COLUMN_NUM_EQUALS = 'cn=';
     const TYPE_COLUMN_NUM_NOT_EQUALS = 'cn!=';
     const TYPE_COLUMN_NUM_MORE = 'cn>';
+    const TYPE_COLUMN_NUM_NOT_MORE = 'cn!>';
     const TYPE_COLUMN_NUM_EQUALS_OR_LESS = 'cn<=';
     const TYPE_COLUMN_NUM_LESS = 'cn<';
+    const TYPE_COLUMN_NUM_NOT_LESS = 'cn!<';
     const TYPE_COLUMN_NUM_EQUALS_OR_MORE = 'cn>=';
 
     //unary

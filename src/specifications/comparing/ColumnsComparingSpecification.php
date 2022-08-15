@@ -10,20 +10,22 @@ use Webmozart\Assert\Assert;
  * ENG: Specification describing the comparison of a field with another field. This object reflects type specifications:
  * - "cs=" - Checks if the values of two fields are equal as strings (null-safe)
  * - "cs!=" - Checks if the values of two fields are not equal as strings (null-safe)
- * - "cs<", "cs>", "cs<=", "cs>=" - Compare values of two table fields as strings (null-safe)
+ * - "cs<", "cs>", "cs!<", "cs!>", "cs<=", "cs>=" - Compare values of two table fields as strings (null-safe)
  * - "clike" - Checks the partial occurrence of the second field in the first as a substring
+ * - "c!like" - Checks the not occurrence of the second field in the first as a substring
  * - "cn=" - Checks if the values of two fields are equal as numbers (null-safe)
  * - "cn!=" - Checks if the values of two fields are not equal as numbers (null-safe)
- * - "cn<", "cn>", "cn<=", "cn>=" - Compare values of two table fields as numbers (null-safe)
+ * - "cn<", "cn>", "cn!<", "cn!>", "cn<=", "cn>=" - Compare values of two table fields as numbers (null-safe)
  *
  * RUS: Спецификация описывающая сравнение поля с другим полем. Данный объект отражает спецификации типа:
  * - "cs=" - Проверяет равенство значений двух полей как строк (null-безопасно)
  * - "cs!=" - Проверяет неравенство значений двух полей как строк (null-безопасно)
- * - "cs<", "cs>", "cs<=", "cs>=" - Сравнение значений двух полей таблицы как строк (null-безопасное)
+ * - "cs<", "cs>", "cs!<", "cs!>", "cs<=", "cs>=" - Сравнение значений двух полей таблицы как строк (null-безопасное)
  * - "clike" - Проверяет частичное вхождение второго поля в первое в виде подстроки
+ * - "c!like" - Проверяет отсутствие вхождения второго поля в первое в виде подстроки
  * - "cn=" - Проверяет равенство значений двух полей как чисел (null-безопасно)
  * - "cn!=" - Проверяет неравенство значений двух полей как чисел (null-безопасно)
- * - "cn<", "cn>", "cn<=", "cn>=" - Сравнение значений двух полей таблицы как чисел (null-безопасное)
+ * - "cn<", "cn>", "cn!<", "cn!>", "cn<=", "cn>=" - Сравнение значений двух полей таблицы как чисел (null-безопасное)
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
@@ -111,15 +113,20 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
             self::TYPE_COLUMN_STR_EQUALS,
             self::TYPE_COLUMN_STR_NOT_EQUALS,
             self::TYPE_COLUMN_STR_MORE,
+            self::TYPE_COLUMN_STR_NOT_MORE,
             self::TYPE_COLUMN_STR_EQUALS_OR_LESS,
             self::TYPE_COLUMN_STR_LESS,
+            self::TYPE_COLUMN_STR_NOT_LESS,
             self::TYPE_COLUMN_STR_EQUALS_OR_MORE,
             self::TYPE_COLUMN_STR_LIKE,
+            self::TYPE_COLUMN_STR_NOT_LIKE,
             self::TYPE_COLUMN_NUM_EQUALS,
             self::TYPE_COLUMN_NUM_NOT_EQUALS,
             self::TYPE_COLUMN_NUM_MORE,
+            self::TYPE_COLUMN_NUM_NOT_MORE,
             self::TYPE_COLUMN_NUM_EQUALS_OR_LESS,
             self::TYPE_COLUMN_NUM_LESS,
+            self::TYPE_COLUMN_NUM_NOT_LESS,
             self::TYPE_COLUMN_NUM_EQUALS_OR_MORE,
         ];
     }

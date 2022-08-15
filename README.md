@@ -67,17 +67,19 @@ like as follows</p>
         (character by character)</li>
     <li><code>"cs!="</code> - checks the inequality of values in two columns of the same table row as strings 
         (character by character)</li>
-    <li><code>"cs>"</code>, <code>"cs>="</code>, <code>"cs<"</code>, <code>"cs<="</code>-
+    <li><code>"cs>"</code>, <code>"cs!>"</code>, <code>"cs>="</code>, <code>"cs<"</code>, <code>"cs!<"</code>, <code>"cs<="</code>-
         compare values in two columns of one table row as strings (character by character)</li>
     <li><code>"clike"</code> - checks whether the value of the second column of the string is included in the first 
         column as a substring</li>
+    <li><code>"c!like"</code> - checks whether the value of the second column of the string is тще included in the first 
+        column as a substring</li>
     <li><code>"cn="</code> - checks the equality of values in two columns of the same table row as numbers</li>
     <li><code>"cn!="</code> - checks the inequality of values in two columns of the same table row as numbers</li>
-    <li><code>"cn>"</code>, <code>"cn>="</code>, <code>"cn<"</code>, <code>"cn<="</code> -
+    <li><code>"cn>"</code>, <code>"cn!>"</code>, <code>"cn>="</code>, <code>"cn<"</code>, <code>"cn!<"</code>, <code>"cn<="</code> -
         compare values in two columns of the same table row as numbers</li>
 </ul>
 <h6>Example:</h6>
-<p><code>Sp::ex("c<=", "contractsCount", "requestsCount")</code></p>
+<p><code>Sp::ex("cs<=", "contractsCount", "requestsCount")</code></p>
 <br>
 
 <h4>Number Comparison Specifications</h4>
@@ -175,16 +177,17 @@ array of child specifications&gt;)
 <ul>
     <li><code>"cs="</code> - проверяет равенство значений в двух колонках одной строки таблицы как строк (посимвольно)</li>
     <li><code>"cs!="</code> - проверяет неравенство значений в двух колонках одной строки таблицы как строк (посимвольно)</li>
-    <li><code>"cs>"</code>, <code>"cs>="</code>, <code>"cs<"</code>, <code>"cs<="</code> - 
+    <li><code>"cs>"</code>, <code>"cs!>"</code>, <code>"cs>="</code>, <code>"cs<"</code>, <code>"cs!<"</code>, <code>"cs<="</code> - 
         сравнивают значений в двух колонках одной строки таблицы как строк (посимвольно)</li>
     <li><code>"clike"</code> - проверяет вхождение значения второй колонки строки в первую в качестве подстроки</li>
+    <li><code>"c!like"</code> - проверяет отсутствие вхождения значения второй колонки строки в первую в качестве подстроки</li>
     <li><code>"cn="</code> - проверяет равенство значений в двух колонках одной строки таблицы как чисел</li>
     <li><code>"cn!="</code> - проверяет неравенство значений в двух колонках одной строки таблицы как чисел</li>
-    <li><code>"cn>"</code>, <code>"cn>="</code>, <code>"cn<"</code>, <code>"cn<="</code> - 
+    <li><code>"cn>"</code>, <code>"cn!>"</code>, <code>"cn>="</code>, <code>"cn<"</code>, <code>"cn!<"</code>, <code>"cn<="</code> - 
         сравнивают значений в двух колонках одной строки таблицы как чисел</li>
 </ul>
 <h6>Пример:</h6>
-<p><code>Sp::ex("c<=", "contractsCount", "requestsCount")</code></p>
+<p><code>Sp::ex("cs<=", "contractsCount", "requestsCount")</code></p>
 <br>
 
 <h4>Спецификации сравнения c числовым значением</h4>
