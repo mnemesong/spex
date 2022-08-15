@@ -14,7 +14,7 @@ interface SpecificationInterface
 {
     //binary string value-comparing
     const TYPE_STR_EQUALS = 's=';
-    const TYPE_STR_NOT_EQUALS = 's!=';
+    const TYPE_STR_NOT_EQUALS_NULL_UNSAFE = 's!=';
     const TYPE_STR_NOT_EQUALS_NULL_SAFE = 's!=?';
     const TYPE_STR_MORE_THAN = 's>';
     const TYPE_STR_NOT_MORE_THAN = 's<=';
@@ -24,7 +24,7 @@ interface SpecificationInterface
 
     //binary numeric value-comparing
     const TYPE_NUM_EQUALS = 'n=';
-    const TYPE_NUM_NOT_EQUALS = 'n!=';
+    const TYPE_NUM_NOT_EQUALS_NULL_UNSAFE = 'n!=';
     const TYPE_NUM_NOT_EQUALS_NULL_SAFE = 'n!=?';
     const TYPE_NUM_MORE_THAN = 'n>';
     const TYPE_NUM_NOT_MORE_THAN = 'n<=';
@@ -35,8 +35,8 @@ interface SpecificationInterface
     const TYPE_IN = 'in';
 
     //binary fields-comparing
-    const TYPE_COLUMN_STR_EQUALS = 'cs=';
-    const TYPE_COLUMN_STR_NOT_EQUALS = 'cs!=';
+    const TYPE_COLUMN_STR_EQUALS_NULL_UNSAFE = 'cs=';
+    const TYPE_COLUMN_STR_NOT_EQUALS_NULL_UNSAFE = 'cs!=';
     const TYPE_COLUMN_STR_EQUALS_NULL_SAFE = 'cs=?';
     const TYPE_COLUMN_STR_NOT_EQUALS_NULL_SAFE = 'cs!=?';
     const TYPE_COLUMN_STR_MORE_THAN = 'cs>';
@@ -44,8 +44,8 @@ interface SpecificationInterface
     const TYPE_COLUMN_STR_LESS_THAN = 'cs<';
     const TYPE_COLUMN_STR_NOT_LESS_THAN = 'cs>=';
     const TYPE_COLUMN_STR_LIKE = 'clike';
-    const TYPE_COLUMN_NUM_EQUALS = 'cn=';
-    const TYPE_COLUMN_NUM_NOT_EQUALS = 'cn!=';
+    const TYPE_COLUMN_NUM_EQUALS_NULL_UNSAFE = 'cn=';
+    const TYPE_COLUMN_NUM_NOT_EQUALS_NULL_UNSAFE = 'cn!=';
     const TYPE_COLUMN_NUM_EQUALS_NULL_SAFE = 'cn=?';
     const TYPE_COLUMN_NUM_NOT_EQUALS_NULL_SAFE = 'cn!=?';
     const TYPE_COLUMN_NUM_MORE_THAN = 'cn>';
