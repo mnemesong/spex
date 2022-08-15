@@ -61,10 +61,14 @@ class NumericValueComparingSpecificationTest extends NonCompositeSpecificationTe
         $this->assertEquals($spec->getType(), 'n<=');
         $spec = new NumericValueComparingSpecification('n<', 'age', 22);
         $this->assertEquals($spec->getType(), 'n<');
+        $spec = new NumericValueComparingSpecification('n!<', 'age', 22);
+        $this->assertEquals($spec->getType(), 'n!<');
         $spec = new NumericValueComparingSpecification('n>=', 'age', 22);
         $this->assertEquals($spec->getType(), 'n>=');
         $spec = new NumericValueComparingSpecification('n>', 'age', 22);
         $this->assertEquals($spec->getType(), 'n>');
+        $spec = new NumericValueComparingSpecification('n!>', 'age', 22);
+        $this->assertEquals($spec->getType(), 'n!>');
     }
 
     public function testIsUnary()

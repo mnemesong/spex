@@ -10,12 +10,12 @@ use Webmozart\Assert\Assert;
  * ENG: Specification describing the comparison of a field with a number. This object reflects type specifications:
  * - "n=" - Checks if the field values are equal to the number.
  * - "n!=" - Checks if field values are not equal to number (null-safe)
- * - "n<", "n>", "n<=", "n>=" - Compare field value with number (null-safe)
+ * - "n<", "n!<", "n>", "n!>", "n<=", "n>=" - Compare field value with number (null-safe)
  *
  * RUS: Спецификация описывающая сравнение поля с числом. Данный объект отражает спецификации типа:
  * - "n=" - Проверяет равенство значений поля с числом.
  * - "n!=" - Проверяет неравенство значений поля с числом (null-безопасное)
- * - "n<", "n>", "n<=", "n>=" - Сравнение значения поля с числом (null-безопасное)
+ * - "n<", "n!<", "n>", "n!>", "n<=", "n>=" - Сравнение значения поля с числом (null-безопасное)
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
@@ -53,8 +53,10 @@ class NumericValueComparingSpecification extends AbstractValueComparingSpecifica
             self::TYPE_NUM_EQUALS,
             self::TYPE_NUM_NOT_EQUALS,
             self::TYPE_NUM_LESS,
+            self::TYPE_NUM_NOT_LESS,
             self::TYPE_NUM_EQUALS_OR_MORE,
             self::TYPE_NUM_MORE,
+            self::TYPE_NUM_NOT_MORE,
             self::TYPE_NUM_EQUALS_OR_LESS
         ];
     }

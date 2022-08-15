@@ -28,8 +28,10 @@ interface SpecificationInterface
     const TYPE_NUM_EQUALS = 'n=';
     const TYPE_NUM_NOT_EQUALS = 'n!=';
     const TYPE_NUM_MORE = 'n>';
+    const TYPE_NUM_NOT_MORE = 'n!>';
     const TYPE_NUM_EQUALS_OR_LESS = 'n<=';
     const TYPE_NUM_LESS = 'n<';
+    const TYPE_NUM_NOT_LESS = 'n!<';
     const TYPE_NUM_EQUALS_OR_MORE = 'n>=';
 
     //binary array-comparing
