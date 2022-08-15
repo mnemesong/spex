@@ -14,38 +14,38 @@ interface SpecificationInterface
 {
     //binary string value-comparing
     const TYPE_STR_EQUALS = 's=';
-    const TYPE_STR_NOT_EQUALS_NULL_SAFE = 's!=';
-    const TYPE_STR_MORE_THAN = 's>';
-    const TYPE_STR_NOT_MORE_THAN = 's<=';
-    const TYPE_STR_LESS_THAN = 's<';
-    const TYPE_STR_NOT_LESS_THAN = 's>=';
+    const TYPE_STR_NOT_EQUALS = 's!=';
+    const TYPE_STR_MORE = 's>';
+    const TYPE_STR_EQUALS_OR_LESS = 's<=';
+    const TYPE_STR_LESS = 's<';
+    const TYPE_STR_EQUALS_OR_MORE = 's>=';
     const TYPE_STR_LIKE = 'like';
 
     //binary numeric value-comparing
     const TYPE_NUM_EQUALS = 'n=';
-    const TYPE_NUM_NOT_EQUALS_NULL_SAFE = 'n!=';
-    const TYPE_NUM_MORE_THAN = 'n>';
-    const TYPE_NUM_NOT_MORE_THAN = 'n<=';
-    const TYPE_NUM_LESS_THAN = 'n<';
-    const TYPE_NUM_NOT_LESS_THAN = 'n>=';
+    const TYPE_NUM_NOT_EQUALS = 'n!=';
+    const TYPE_NUM_MORE = 'n>';
+    const TYPE_NUM_EQUALS_OR_LESS = 'n<=';
+    const TYPE_NUM_LESS = 'n<';
+    const TYPE_NUM_EQUALS_OR_MORE = 'n>=';
 
     //binary array-comparing
     const TYPE_IN = 'in';
 
     //binary fields-comparing
-    const TYPE_COLUMN_STR_EQUALS_NULL_SAFE = 'cs=';
-    const TYPE_COLUMN_STR_NOT_EQUALS_NULL_SAFE = 'cs!=';
-    const TYPE_COLUMN_STR_MORE_THAN = 'cs>';
-    const TYPE_COLUMN_STR_NOT_MORE_THAN = 'cs<=';
-    const TYPE_COLUMN_STR_LESS_THAN = 'cs<';
-    const TYPE_COLUMN_STR_NOT_LESS_THAN = 'cs>=';
+    const TYPE_COLUMN_STR_EQUALS = 'cs=';
+    const TYPE_COLUMN_STR_NOT_EQUALS = 'cs!=';
+    const TYPE_COLUMN_STR_MORE = 'cs>';
+    const TYPE_COLUMN_STR_EQUALS_OR_LESS = 'cs<=';
+    const TYPE_COLUMN_STR_LESS = 'cs<';
+    const TYPE_COLUMN_STR_EQUALS_OR_MORE = 'cs>=';
     const TYPE_COLUMN_STR_LIKE = 'clike';
-    const TYPE_COLUMN_NUM_EQUALS_NULL_SAFE = 'cn=';
-    const TYPE_COLUMN_NUM_NOT_EQUALS_NULL_SAFE = 'cn!=';
-    const TYPE_COLUMN_NUM_MORE_THAN = 'cn>';
-    const TYPE_COLUMN_NUM_NOT_MORE_THAN = 'cn<=';
-    const TYPE_COLUMN_NUM_LESS_THAN = 'cn<';
-    const TYPE_COLUMN_NUM_NOT_LESS_THAN = 'cn>=';
+    const TYPE_COLUMN_NUM_EQUALS = 'cn=';
+    const TYPE_COLUMN_NUM_NOT_EQUALS = 'cn!=';
+    const TYPE_COLUMN_NUM_MORE = 'cn>';
+    const TYPE_COLUMN_NUM_EQUALS_OR_LESS = 'cn<=';
+    const TYPE_COLUMN_NUM_LESS = 'cn<';
+    const TYPE_COLUMN_NUM_EQUALS_OR_MORE = 'cn>=';
 
     //unary
     const TYPE_EMPTY = 'empty';

@@ -51,11 +51,11 @@ class NumericValueComparingSpecification extends AbstractValueComparingSpecifica
     {
         return [
             self::TYPE_NUM_EQUALS,
-            self::TYPE_NUM_NOT_EQUALS_NULL_SAFE,
-            self::TYPE_NUM_LESS_THAN,
-            self::TYPE_NUM_NOT_LESS_THAN,
-            self::TYPE_NUM_MORE_THAN,
-            self::TYPE_NUM_NOT_MORE_THAN
+            self::TYPE_NUM_NOT_EQUALS,
+            self::TYPE_NUM_LESS,
+            self::TYPE_NUM_EQUALS_OR_MORE,
+            self::TYPE_NUM_MORE,
+            self::TYPE_NUM_EQUALS_OR_LESS
         ];
     }
 

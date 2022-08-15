@@ -55,12 +55,12 @@ class StringValueComparingSpecification extends AbstractValueComparingSpecificat
     {
         return [
             self::TYPE_STR_EQUALS,
-            self::TYPE_STR_LESS_THAN,
-            self::TYPE_STR_NOT_LESS_THAN,
-            self::TYPE_STR_MORE_THAN,
-            self::TYPE_STR_NOT_MORE_THAN,
+            self::TYPE_STR_LESS,
+            self::TYPE_STR_EQUALS_OR_MORE,
+            self::TYPE_STR_MORE,
+            self::TYPE_STR_EQUALS_OR_LESS,
             self::TYPE_STR_LIKE,
-            self::TYPE_STR_NOT_EQUALS_NULL_SAFE
+            self::TYPE_STR_NOT_EQUALS
         ];
     }
 
