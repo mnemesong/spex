@@ -43,10 +43,6 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
         $this->assertEquals($spec->getType(), 'cs=');
         $spec = new ColumnsComparingSpecification('cs!=', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'cs!=');
-        $spec = new ColumnsComparingSpecification('cs=?', 'startDate', 'finishDate');
-        $this->assertEquals($spec->getType(), 'cs=?');
-        $spec = new ColumnsComparingSpecification('cs!=?', 'startDate', 'finishDate');
-        $this->assertEquals($spec->getType(), 'cs!=?');
         $spec = new ColumnsComparingSpecification('cs>', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'cs>');
         $spec = new ColumnsComparingSpecification('cs>=', 'startDate', 'finishDate');
@@ -61,10 +57,6 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
         $this->assertEquals($spec->getType(), 'cn=');
         $spec = new ColumnsComparingSpecification('cn!=', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'cn!=');
-        $spec = new ColumnsComparingSpecification('cn=?', 'startDate', 'finishDate');
-        $this->assertEquals($spec->getType(), 'cn=?');
-        $spec = new ColumnsComparingSpecification('cn!=?', 'startDate', 'finishDate');
-        $this->assertEquals($spec->getType(), 'cn!=?');
         $spec = new ColumnsComparingSpecification('cn>', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'cn>');
         $spec = new ColumnsComparingSpecification('cn>=', 'startDate', 'finishDate');

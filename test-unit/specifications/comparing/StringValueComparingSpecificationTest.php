@@ -43,8 +43,6 @@ class StringValueComparingSpecificationTest extends NonCompositeSpecificationTes
         $this->assertEquals($spec->getType(), 's=');
         $spec = new StringValueComparingSpecification('s!=', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 's!=');
-        $spec = new StringValueComparingSpecification('s!=?', 'date', '2021-05-25');
-        $this->assertEquals($spec->getType(), 's!=?');
         $spec = new StringValueComparingSpecification('s<', 'date', '2021-05-25');
         $this->assertEquals($spec->getType(), 's<');
         $spec = new StringValueComparingSpecification('s>', 'date', '2021-05-25');
