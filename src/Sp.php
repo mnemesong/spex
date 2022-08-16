@@ -12,6 +12,7 @@ use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
 use Mnemesong\Spex\specifications\composites\MultipleCompositeSpecification;
 use Mnemesong\Spex\specifications\composites\UnaryCompositeSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
+use Mnemesong\Structure\StructureInterface;
 use Webmozart\Assert\Assert;
 
 
@@ -95,13 +96,24 @@ class Sp
     }
 
     /**
-     * @param string $type
-     * @param string|SpecificationInterface|SpecificationInterface[] $opt1
-     * @param mixed $opt2
-     * @return SpecificationInterface
+     * Structure to specification converter
+     *
+     * @param StructureInterface $structure
+     * @param string $composeOperator
+     * @return SpecificationInterface|null
      */
-    public function express(string $type, $opt1, $opt2 = null): SpecificationInterface
+    public static function st(StructureInterface $structure, string $composeOperator = 'and'): ?SpecificationInterface
     {
-        return self::ex($type, $opt1, $opt2);
+        Assert::inArray(
+            $composeOperator,
+            MultipleCompositeSpecification::getAvailableTypes(),
+            'Invalid merge operator: ' . $composeOperator . '. Except one of: '
+            . implode(', ', MultipleCompositeSpecification::getAvailableTypes()));
+        if(empty($structure->toArray())) {
+            return null;
+        }
+        $conds = $structure->map(fn($val, $key) => (isset($val) ? Sp::ex('s=', $key, $val) : Sp::ex('null', $key)));
+        return Sp::ex($composeOperator, array_values($conds));
     }
+
 }

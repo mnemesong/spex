@@ -11,6 +11,7 @@ use Mnemesong\Spex\specifications\comparing\StringValueComparingSpecification;
 use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
 use Mnemesong\Spex\specifications\composites\MultipleCompositeSpecification;
 use Mnemesong\Spex\specifications\composites\UnaryCompositeSpecification;
+use Mnemesong\Structure\Structure;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -29,7 +30,7 @@ class SpTest extends TestCase
         $spec = Sp::ex('cs!=', 'date', 'date2');
         $this->assertEquals($spec, new ColumnsComparingSpecification('cs!=', 'date', 'date2'));
 
-        $spec = (new Sp())->express('cs>', 'date', 'date2');
+        $spec = Sp::ex('cs>', 'date', 'date2');
         $this->assertEquals($spec, new ColumnsComparingSpecification('cs>', 'date', 'date2'));
     }
 
@@ -38,7 +39,7 @@ class SpTest extends TestCase
         $spec = Sp::ex('n>', 'age', 21);
         $this->assertEquals($spec, new NumericValueComparingSpecification('n>', 'age', 21));
 
-        $spec = (new Sp)->express('n!=', 'count', 22);
+        $spec = Sp::ex('n!=', 'count', 22);
         $this->assertEquals($spec, new NumericValueComparingSpecification('n!=', 'count', 22));
     }
 
@@ -47,7 +48,7 @@ class SpTest extends TestCase
         $spec = Sp::ex('s=', 'age', 18);
         $this->assertEquals($spec, new StringValueComparingSpecification('s=', 'age', '18'));
 
-        $spec = (new Sp)->express('s>', 'date', '2022-11-03');
+        $spec = Sp::ex('s>', 'date', '2022-11-03');
         $this->assertEquals($spec, new StringValueComparingSpecification('s>', 'date', '2022-11-03'));
     }
 
@@ -56,7 +57,7 @@ class SpTest extends TestCase
         $spec = Sp::ex('null', 'responsible');
         $this->assertEquals($spec, new UnaryValueSpecification('null', 'responsible'));
 
-        $spec = (new Sp())->express('!empty', 'customer');
+        $spec = Sp::ex('!empty', 'customer');
         $this->assertEquals($spec, new UnaryValueSpecification('!empty', 'customer'));
     }
 
@@ -73,8 +74,7 @@ class SpTest extends TestCase
             new ColumnsComparingSpecification('cs!=', 'date', 'date2'),
         ]));
 
-        $sp = new Sp();
-        $spec = $sp->express('or', [
+        $spec = Sp::ex('or', [
             Sp::ex('null', 'responsible'), Sp::ex('s=', 'age', '18')
         ]);
         $this->assertEquals($spec, new MultipleCompositeSpecification('or', [
@@ -88,6 +88,32 @@ class SpTest extends TestCase
         $spec = Sp::ex('!', Sp::ex('s=', 'age', '18'));
         $this->assertEquals($spec, new UnaryCompositeSpecification('!',
             new StringValueComparingSpecification('s=', 'age', '18')));
+    }
+
+    public function testConversion()
+    {
+        $struct = new Structure(['uuid' => '89hgaf98', 'date' => '2022-01-02', 'age' => 12]);
+        $spec = Sp::st($struct);
+        $this->assertEquals(new MultipleCompositeSpecification('and', [
+            new StringValueComparingSpecification('s=', 'uuid', '89hgaf98'),
+            new StringValueComparingSpecification('s=', 'date', '2022-01-02'),
+            new StringValueComparingSpecification('s=', 'age', '12'),
+        ]), $spec);
+
+        $struct = new Structure(['uuid' => '89hgaf98', 'date' => '2022-01-02', 'age' => 12]);
+        $spec = Sp::st($struct, 'or');
+        $this->assertEquals(new MultipleCompositeSpecification('or', [
+            new StringValueComparingSpecification('s=', 'uuid', '89hgaf98'),
+            new StringValueComparingSpecification('s=', 'date', '2022-01-02'),
+            new StringValueComparingSpecification('s=', 'age', '12'),
+        ]), $spec);
+    }
+
+    public function testConversionException()
+    {
+        $struct = new Structure(['uuid' => '89hgaf98', 'date' => '2022-01-02', 'age' => 12]);
+        $this->expectException(\InvalidArgumentException::class);
+        $spec = Sp::st($struct, 'some');
     }
 
 }
