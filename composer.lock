@@ -4,8 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68a6d3a31d781b2aa26686864a803ffd",
+    "content-hash": "6351f3c6adb1e72cea96c300d5a5c680",
     "packages": [
+        {
+            "name": "mnemesong/structure",
+            "version": "0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnemesong/structure.git",
+                "reference": "30df3059f9af5a008ca54615fa5b8ce1bba98472"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnemesong/structure/zipball/30df3059f9af5a008ca54615fa5b8ce1bba98472",
+                "reference": "30df3059f9af5a008ca54615fa5b8ce1bba98472",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.4",
+                "webmozart/assert": "1.11.*"
+            },
+            "require-dev": {
+                "mnemesong/collection-generator": "*",
+                "phpstan/extension-installer": "*",
+                "phpstan/phpstan": "*",
+                "phpstan/phpstan-webmozart-assert": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mnemesong\\Structure\\": "src/",
+                    "Mnemesong\\StructureUnitTest\\": "test-unit/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pantagruel74",
+                    "email": "tostar74@mail.ru"
+                }
+            ],
+            "description": "A library for creating and working with objects that are dynamic associative arrays of scalar values.",
+            "support": {
+                "issues": "https://github.com/mnemesong/structure/issues",
+                "source": "https://github.com/mnemesong/structure/tree/0.3.2"
+            },
+            "time": "2022-08-16T18:27:35+00:00"
+        },
         {
             "name": "webmozart/assert",
             "version": "1.11.0",
