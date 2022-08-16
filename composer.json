@@ -1,6 +1,6 @@
 {
     "name": "mnemesong/spex",
-    "description": "The package provides objects and an interface for express specifications (describes the conditions for fetching records from storage)",
+    "description": "The package provides objects and an interface for express specifications.",
     "type": "library",
     "require-dev": {
         "phpunit/phpunit": "*",
@@ -12,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "Mnemesong\\Spex\\": "src/",
-            "Mnemesong\\SpexUnitTest\\": "test-unit"
+            "Mnemesong\\SpexUnitTest\\": "test-unit",
+            "Mnemesong\\SpexUnitStubs\\": "stubs-unit"
         }
     },
     "authors": [
