@@ -3,8 +3,7 @@
 namespace Mnemesong\SpexUnitTest\specified;
 
 use Mnemesong\Spex\Sp;
-use Mnemesong\SpexUnitStubs\specified\SpecifiedStub;
-use Mnemesong\Structure\Structure;
+use Mnemesong\SpexStubs\specified\SpecifiedStub;
 use PHPUnit\Framework\TestCase;
 
 class SpecifiedTest extends TestCase

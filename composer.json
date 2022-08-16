@@ -13,7 +13,7 @@
         "psr-4": {
             "Mnemesong\\Spex\\": "src/",
             "Mnemesong\\SpexUnitTest\\": "test-unit",
-            "Mnemesong\\SpexUnitStubs\\": "stubs-unit"
+            "Mnemesong\\SpexStubs\\": "stubs"
         }
     },
     "authors": [
@@ -25,6 +25,7 @@
     "scripts": {
         "test:unit": "phpunit test-unit",
         "lint:src": "phpstan analyse src --level 9",
+        "lint:stubs": "phpstan analyse stubs --level 9",
         "lint:unit": "phpstan analyse test-unit --level 5"
     },
     "minimum-stability": "stable",
