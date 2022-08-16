@@ -112,7 +112,7 @@ class Sp
         if(empty($structure->toArray())) {
             return null;
         }
-        $conds = $structure->map(fn($val, $key) => (isset($val) ? Sp::ex('s=', $key, $val) : Sp::ex('null', $key)));
+        $conds = $structure->map(fn($val, $key) => (isset($val) ? Sp::ex('s=', $key, strval($val)) : Sp::ex('null', $key)));
         return Sp::ex($composeOperator, array_values($conds));
     }
 

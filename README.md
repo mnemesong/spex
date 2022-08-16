@@ -258,6 +258,36 @@ array of child specifications&gt;)
 <br>
 <hr>
 
+<h2>Converting Structures to Specifications / Преобразование структур в спецификации</h2>
+<h3>ENG</h3>
+<p>The class <code>Sp</code> allows you to turn Structures into specifications. This is useful when you need to check in some repository
+the presence of records in many respects similar to a specific structure. Use the <code>Sp::st()</code></p> method for this
+<h4>Example</h4>
+<p><code>
+$struct = new Structure(['name' => 'Victoria', 'age' => 21]);<br>
+$spec = Sp::st($struct, 'and');<br>
+// The result will be equivalent to the following code:<br>
+$spec = Sp::ex('and', [<br>
+&emsp;Sp::ex('s=', 'name', 'Victoria')<br>
+&emsp;Sp::ex('s=', 'age', '21');<br>
+]);
+</code></p>
+
+
+<h3>RUS</h3>
+<p>Класс <code>Sp</code> позволяет превращать Структуры в спецификации. Это полезно когда нужно проверить в каком-то хранилище
+наличие записей по многим параметрам похожих на конкретную структуру. Используйте для этого метод <code>Sp::st()</code></p>
+<h4>Пример</h4>
+<p><code>
+$struct = new Structure(['name' => 'Victoria', 'age' => 21]);<br>
+$spec = Sp::st($struct, 'and');<br>
+// Результат будет эквивалентен следующему коду:<br>
+$spec = Sp::ex('and', [<br>
+&emsp;Sp::ex('s=', 'name', 'Victoria')<br>
+&emsp;Sp::ex('s=', 'age', '21');<br>
+]);
+</code></p>
+
 <h2>License / Лицензия</h2>
 - MIT
 <hr>
