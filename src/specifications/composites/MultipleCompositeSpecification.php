@@ -64,21 +64,23 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
      * @param SpecificationInterface $spec
      * @return $this
      */
-    public function addOne(SpecificationInterface $spec): self
+    public function withNewOne(SpecificationInterface $spec): self
     {
-        $this->specs[] = $spec;
-        return $this;
+        $clone = clone $this;
+        $clone->specs[] = $spec;
+        return $clone;
     }
 
     /**
      * @param SpecificationInterface[] $specs
      * @return $this
      */
-    public function addMany(array $specs): self
+    public function withNewMany(array $specs): self
     {
         Assert::allIsAOf($specs, SpecificationInterface::class, "Except array of specifications");
-        $this->specs = array_merge($this->specs, $specs);
-        return $this;
+        $clone = clone $this;
+        $clone->specs = array_merge($this->specs, $specs);
+        return $clone;
     }
 
     /**
