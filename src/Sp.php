@@ -12,7 +12,7 @@ use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
 use Mnemesong\Spex\specifications\composites\MultipleCompositeSpecification;
 use Mnemesong\Spex\specifications\composites\UnaryCompositeSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
-use Mnemesong\Structure\StructureInterface;
+use Mnemesong\Structure\Structure;
 use Webmozart\Assert\Assert;
 
 
@@ -98,11 +98,11 @@ class Sp
     /**
      * Structure to specification converter
      *
-     * @param StructureInterface $structure
+     * @param Structure $structure
      * @param string $composeOperator
      * @return SpecificationInterface|null
      */
-    public static function st(StructureInterface $structure, string $composeOperator = 'and'): ?SpecificationInterface
+    public static function st(Structure $structure, string $composeOperator = 'and'): ?SpecificationInterface
     {
         Assert::inArray(
             $composeOperator,

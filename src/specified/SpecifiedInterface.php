@@ -3,7 +3,6 @@
 namespace Mnemesong\Spex\specified;
 
 use Mnemesong\Spex\specifications\SpecificationInterface;
-use Mnemesong\Structure\StructureInterface;
 
 interface SpecifiedInterface
 {

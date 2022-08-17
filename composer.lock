@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6351f3c6adb1e72cea96c300d5a5c680",
+    "content-hash": "d46556b32f242b44ab247d05b1d81a47",
     "packages": [
         {
             "name": "mnemesong/structure",
-            "version": "0.3.2",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/structure.git",
-                "reference": "30df3059f9af5a008ca54615fa5b8ce1bba98472"
+                "reference": "13b79ce391b9cc0290925533887ca83d47af250c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/structure/zipball/30df3059f9af5a008ca54615fa5b8ce1bba98472",
-                "reference": "30df3059f9af5a008ca54615fa5b8ce1bba98472",
+                "url": "https://api.github.com/repos/mnemesong/structure/zipball/13b79ce391b9cc0290925533887ca83d47af250c",
+                "reference": "13b79ce391b9cc0290925533887ca83d47af250c",
                 "shasum": ""
             },
             "require": {
@@ -52,9 +52,9 @@
             "description": "A library for creating and working with objects that are dynamic associative arrays of scalar values.",
             "support": {
                 "issues": "https://github.com/mnemesong/structure/issues",
-                "source": "https://github.com/mnemesong/structure/tree/0.3.2"
+                "source": "https://github.com/mnemesong/structure/tree/0.4"
             },
-            "time": "2022-08-16T18:27:35+00:00"
+            "time": "2022-08-17T09:14:38+00:00"
         },
         {
             "name": "webmozart/assert",

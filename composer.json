@@ -32,7 +32,7 @@
     "require": {
         "php": ">=7.4",
         "webmozart/assert": "1.11.*",
-        "mnemesong/structure": "0.3.*"
+        "mnemesong/structure": "0.4.*"
     },
     "config": {
         "allow-plugins": {
