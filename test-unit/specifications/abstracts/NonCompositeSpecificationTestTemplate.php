@@ -8,11 +8,11 @@ namespace Mnemesong\SpexUnitTest\specifications\abstracts;
  */
 abstract class NonCompositeSpecificationTestTemplate extends AbstractSpecificationTestTemplate
 {
-    abstract public function testIsUnary();
+    abstract public function testIsUnary(): void;
 
-    abstract public function testIsValueComparing();
+    abstract public function testIsValueComparing(): void;
 
-    abstract public function testIsFieldsComparing();
+    abstract public function testIsFieldsComparing(): void;
 
-    abstract public function testIsArrayComparing();
+    abstract public function testIsArrayComparing(): void;
 }

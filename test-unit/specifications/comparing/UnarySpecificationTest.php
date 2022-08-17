@@ -11,32 +11,32 @@ use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTes
  */
 class UnarySpecificationTest extends NonCompositeSpecificationTestTemplate
 {
-    public function testBasics()
+    public function testBasics(): void
     {
         $spec = new UnaryValueSpecification('!empty', 'url');
         $this->assertEquals($spec->getType(), '!empty');
         $this->assertEquals($spec->getField(), 'url');
     }
 
-    public function testConstructionException1()
+    public function testConstructionException1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new UnaryValueSpecification('!', 'url');
     }
 
-    public function testConstructionException2()
+    public function testConstructionException2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new UnaryValueSpecification('!=', 'url');
     }
 
-    public function testIsComposite()
+    public function testIsComposite(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
         $this->assertEquals($spec->isComposite(), false);
     }
 
-    public function testGetType()
+    public function testGetType(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
         $this->assertEquals($spec->getType(), 'empty');
@@ -48,25 +48,25 @@ class UnarySpecificationTest extends NonCompositeSpecificationTestTemplate
         $this->assertEquals($spec->getType(), '!null');
     }
 
-    public function testIsUnary()
+    public function testIsUnary(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
         $this->assertEquals($spec->isUnary(), true);
     }
 
-    public function testIsValueComparing()
+    public function testIsValueComparing(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
         $this->assertEquals($spec->isValueComparing(), false);
     }
 
-    public function testIsFieldsComparing()
+    public function testIsFieldsComparing(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
         $this->assertEquals($spec->isFieldsComparing(), false);
     }
 
-    public function testIsArrayComparing()
+    public function testIsArrayComparing(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
         $this->assertEquals($spec->isArrayComparing(), false);

@@ -19,13 +19,13 @@ use PHPUnit\Framework\TestCase;
  */
 class SpTest extends TestCase
 {
-    public function testArrayComparingSpecificationBuild()
+    public function testArrayComparingSpecificationBuild(): void
     {
         $spec = Sp::ex('in', 'age', [20,22,24,26]);
         $this->assertEquals($spec, new ArrayComparingSpecification('in', 'age', ['20', '22' , '24', '26']));
     }
 
-    public function testFieldsComparingSpecification()
+    public function testFieldsComparingSpecification(): void
     {
         $spec = Sp::ex('cs!=', 'date', 'date2');
         $this->assertEquals($spec, new ColumnsComparingSpecification('cs!=', 'date', 'date2'));
@@ -34,7 +34,7 @@ class SpTest extends TestCase
         $this->assertEquals($spec, new ColumnsComparingSpecification('cs>', 'date', 'date2'));
     }
 
-    public function testNumericValueComparingSpecification()
+    public function testNumericValueComparingSpecification(): void
     {
         $spec = Sp::ex('n>', 'age', 21);
         $this->assertEquals($spec, new NumericValueComparingSpecification('n>', 'age', 21));
@@ -43,7 +43,7 @@ class SpTest extends TestCase
         $this->assertEquals($spec, new NumericValueComparingSpecification('n!=', 'count', 22));
     }
 
-    public function testStringValueSpecificationsBuild()
+    public function testStringValueSpecificationsBuild(): void
     {
         $spec = Sp::ex('s=', 'age', 18);
         $this->assertEquals($spec, new StringValueComparingSpecification('s=', 'age', '18'));
@@ -52,7 +52,7 @@ class SpTest extends TestCase
         $this->assertEquals($spec, new StringValueComparingSpecification('s>', 'date', '2022-11-03'));
     }
 
-    public function testUnaryValueSpecificationBuild()
+    public function testUnaryValueSpecificationBuild(): void
     {
         $spec = Sp::ex('null', 'responsible');
         $this->assertEquals($spec, new UnaryValueSpecification('null', 'responsible'));
@@ -61,7 +61,7 @@ class SpTest extends TestCase
         $this->assertEquals($spec, new UnaryValueSpecification('!empty', 'customer'));
     }
 
-    public function testMultipleCompositeSpecificationBuild()
+    public function testMultipleCompositeSpecificationBuild(): void
     {
         $spec = Sp::ex('and', [
             Sp::ex('null', 'responsible'),
@@ -83,14 +83,14 @@ class SpTest extends TestCase
         ]));
     }
 
-    public function testUnaryCompositeSpecificationBuild()
+    public function testUnaryCompositeSpecificationBuild(): void
     {
         $spec = Sp::ex('!', Sp::ex('s=', 'age', '18'));
         $this->assertEquals($spec, new UnaryCompositeSpecification('!',
             new StringValueComparingSpecification('s=', 'age', '18')));
     }
 
-    public function testConversion()
+    public function testConversion(): void
     {
         $struct = new Structure(['uuid' => '89hgaf98', 'date' => '2022-01-02', 'age' => 12]);
         $spec = Sp::st($struct);
@@ -109,7 +109,7 @@ class SpTest extends TestCase
         ]), $spec);
     }
 
-    public function testConversionException()
+    public function testConversionException(): void
     {
         $struct = new Structure(['uuid' => '89hgaf98', 'date' => '2022-01-02', 'age' => 12]);
         $this->expectException(\InvalidArgumentException::class);

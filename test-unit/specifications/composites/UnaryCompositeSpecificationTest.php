@@ -12,7 +12,7 @@ use Mnemesong\SpexUnitTest\specifications\abstracts\CompositeSpecificationTestTe
  */
 class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
 {
-    public function testBasics()
+    public function testBasics(): void
     {
         $spec = new UnaryCompositeSpecification(
             '!',
@@ -22,7 +22,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         $this->assertEquals($spec->getSpec(), new NumericValueComparingSpecification('n=', 'age', 25));
     }
 
-    public function testConstructorException1()
+    public function testConstructorException1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new UnaryCompositeSpecification(
@@ -31,7 +31,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         );
     }
 
-    public function testConstructorException2()
+    public function testConstructorException2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new UnaryCompositeSpecification(
@@ -40,7 +40,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         );
     }
 
-    public function testIsComposite()
+    public function testIsComposite(): void
     {
         $spec = new UnaryCompositeSpecification(
             '!',
@@ -49,7 +49,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         $this->assertEquals($spec->isComposite(), true);
     }
 
-    public function testGetType()
+    public function testGetType(): void
     {
         $spec = new UnaryCompositeSpecification(
             '!',
@@ -58,7 +58,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         $this->assertEquals($spec->getType(), '!');
     }
 
-    public function testCount()
+    public function testCount(): void
     {
         $spec = new UnaryCompositeSpecification(
             '!',
@@ -67,7 +67,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         $this->assertEquals($spec->count(), 1);
     }
 
-    public function testIsMultiple()
+    public function testIsMultiple(): void
     {
         $spec = new UnaryCompositeSpecification(
             '!',
@@ -76,7 +76,7 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         $this->assertEquals($spec->isMultiple(), false);
     }
 
-    public function testIsUnary()
+    public function testIsUnary(): void
     {
         $spec = new UnaryCompositeSpecification(
             '!',

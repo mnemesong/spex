@@ -15,7 +15,7 @@ use Mnemesong\SpexUnitTest\specifications\abstracts\CompositeSpecificationTestTe
 class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTemplate
 {
 
-    public function testBasics()
+    public function testBasics(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -28,7 +28,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         ]);
     }
 
-    public function testConstructExceptions1()
+    public function testConstructExceptions1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new MultipleCompositeSpecification('=', [
@@ -37,7 +37,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         ]);
     }
 
-    public function testConstructExceptions2()
+    public function testConstructExceptions2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new MultipleCompositeSpecification('in', [
@@ -46,7 +46,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         ]);
     }
 
-    public function testConstructExceptions3()
+    public function testConstructExceptions3(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new MultipleCompositeSpecification('and', [
@@ -54,7 +54,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         ]);
     }
 
-    public function testIsComposite()
+    public function testIsComposite(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -63,7 +63,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         $this->assertEquals($spec->isComposite(), true);
     }
 
-    public function testWithNewOne()
+    public function testWithNewOne(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -85,7 +85,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         ], $spec->getSpecifications());
     }
 
-    public function testWithNewMany()
+    public function testWithNewMany(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -111,7 +111,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         ], $spec->getSpecifications());
     }
 
-    public function testGetType()
+    public function testGetType(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -125,7 +125,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         $this->assertEquals($spec->getType(), 'or');
     }
 
-    public function testCount()
+    public function testCount(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -144,7 +144,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         $this->assertEquals($spec->count(), 4);
     }
 
-    public function testIsMultiple()
+    public function testIsMultiple(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
@@ -153,7 +153,7 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         $this->assertEquals($spec->isMultiple(), true);
     }
 
-    public function testIsUnary()
+    public function testIsUnary(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),

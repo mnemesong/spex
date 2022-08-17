@@ -11,7 +11,7 @@ use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTes
  */
 class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTemplate
 {
-    public function testBasics()
+    public function testBasics(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'cs=');
@@ -19,25 +19,25 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
         $this->assertEquals($spec->getField2(), 'finishDate');
     }
 
-    public function testConstructorException1()
+    public function testConstructorException1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new ColumnsComparingSpecification('s=', 'startDate', 'finishDate');
     }
 
-    public function testConstructorException2()
+    public function testConstructorException2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new ColumnsComparingSpecification('and', 'startDate', 'finishDate');
     }
 
-    public function testIsComposite()
+    public function testIsComposite(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->isComposite(), false);
     }
 
-    public function testGetType()
+    public function testGetType(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->getType(), 'cs=');
@@ -77,25 +77,25 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
         $this->assertEquals($spec->getType(), 'cn<=');
     }
 
-    public function testIsUnary()
+    public function testIsUnary(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->isUnary(), false);
     }
 
-    public function testIsValueComparing()
+    public function testIsValueComparing(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->isValueComparing(), false);
     }
 
-    public function testIsFieldsComparing()
+    public function testIsFieldsComparing(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->isFieldsComparing(), true);
     }
 
-    public function testIsArrayComparing()
+    public function testIsArrayComparing(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
         $this->assertEquals($spec->isArrayComparing(), false);

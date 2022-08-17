@@ -8,9 +8,9 @@ namespace Mnemesong\SpexUnitTest\specifications\abstracts;
  */
 abstract class CompositeSpecificationTestTemplate extends AbstractSpecificationTestTemplate
 {
-    abstract public function testCount();
+    abstract public function testCount(): void;
 
-    abstract public function testIsMultiple();
+    abstract public function testIsMultiple(): void;
 
-    abstract public function testIsUnary();
+    abstract public function testIsUnary(): void;
 }

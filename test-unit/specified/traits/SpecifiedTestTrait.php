@@ -12,7 +12,7 @@ trait SpecifiedTestTrait
     
     abstract protected function useTestCase(): TestCase;
 
-    public function testBasics()
+    public function testBasics(): void
     {
         $specified = $this->getInitializedSpecified();
         $this->useTestCase()->assertNull($specified->getSpecification());
@@ -21,7 +21,7 @@ trait SpecifiedTestTrait
         $this->useTestCase()->assertNull($specified->getSpecification());
     }
 
-    public function testAndWhere()
+    public function testAndWhere(): void
     {
         $specified = $this->getInitializedSpecified();
         $newSpecified = $specified->andWhere(Sp::ex('in', 'name', ['Jones', 'Valeria', 'Sam']));
@@ -52,7 +52,7 @@ trait SpecifiedTestTrait
         ]), $newSpecified->getSpecification());
     }
 
-    public function testOrWhere()
+    public function testOrWhere(): void
     {
         $specified = $this->getInitializedSpecified();
         $newSpecified = $specified->orWhere(Sp::ex('in', 'name', ['Jones', 'Valeria', 'Sam']));
