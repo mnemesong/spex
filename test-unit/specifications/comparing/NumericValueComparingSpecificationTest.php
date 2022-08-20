@@ -3,15 +3,17 @@ declare(strict_types=1);
 
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
-use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTestTemplate;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class NumericValueComparingSpecificationTest extends AbstractSpecificationTestTemplate
+class NumericValueComparingSpecificationTest extends TestCase
 {
+    use SpecificationTrait;
+
     public function testBasics1(): void
     {
         $spec = new NumericValueComparingSpecification('n<', 'age', 22);

@@ -3,14 +3,17 @@ declare(strict_types=1);
 
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\ArrayComparingSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class ArrayComparingSpecificationTest extends AbstractSpecificationTestTemplate
+class ArrayComparingSpecificationTest extends TestCase
 {
+    use SpecificationTrait;
+
     public function testBasics(): void
     {
         $spec = new ArrayComparingSpecification('in', 'date', ['2022-12-01, 2022-11-13']);

@@ -3,15 +3,17 @@ declare(strict_types=1);
 
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\StringValueComparingSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
-use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTestTemplate;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class StringValueComparingSpecificationTest extends AbstractSpecificationTestTemplate
+class StringValueComparingSpecificationTest extends TestCase
 {
+    use SpecificationTrait;
+
     public function testBasics(): void
     {
         $spec = new StringValueComparingSpecification('s<', 'date', '2021-05-25');

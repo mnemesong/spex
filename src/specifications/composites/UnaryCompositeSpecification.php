@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\composites;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
@@ -17,8 +18,9 @@ use Webmozart\Assert\Assert;
  */
 class UnaryCompositeSpecification implements SpecificationInterface
 {
+    use SpecificationTrait;
+
     protected SpecificationInterface $spec;
-    protected string $type;
 
     /**
      * @param string $type
@@ -30,14 +32,6 @@ class UnaryCompositeSpecification implements SpecificationInterface
             . implode(", ", static::availableTypes()) . ", get value: " . $type);
         $this->type = $type;
         $this->spec = $spec;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**

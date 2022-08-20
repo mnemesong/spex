@@ -3,14 +3,17 @@ declare(strict_types=1);
 
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\ColumnsComparingSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class ColumnsComparingSpecificationTest extends AbstractSpecificationTestTemplate
+class ColumnsComparingSpecificationTest extends TestCase
 {
+    use SpecificationTrait;
+
     public function testBasics(): void
     {
         $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');

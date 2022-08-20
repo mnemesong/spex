@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
@@ -18,8 +19,9 @@ use Webmozart\Assert\Assert;
  */
 class UnaryValueSpecification implements SpecificationInterface
 {
+    use SpecificationTrait;
+
     protected string $field;
-    protected string $type;
 
     /**
      * @param string $type
@@ -62,14 +64,6 @@ class UnaryValueSpecification implements SpecificationInterface
     public function isArrayComparing(): bool
     {
         return false;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**

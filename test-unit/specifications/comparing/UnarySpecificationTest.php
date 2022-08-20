@@ -3,15 +3,17 @@ declare(strict_types=1);
 
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
-use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTestTemplate;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class UnarySpecificationTest extends AbstractSpecificationTestTemplate
+class UnarySpecificationTest extends TestCase
 {
+    use SpecificationTrait;
+
     public function testBasics(): void
     {
         $spec = new UnaryValueSpecification('!empty', 'url');

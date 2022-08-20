@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\comparing;
 
-use Mnemesong\Spex\specifications\abstracts\AbstractValueComparingSpecification;
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
+use Mnemesong\Spex\specifications\abstracts\ValueComparingSpecificationTrait;
+use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
 /**
@@ -19,8 +21,11 @@ use Webmozart\Assert\Assert;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class NumericValueComparingSpecification extends AbstractValueComparingSpecification
+class NumericValueComparingSpecification implements SpecificationInterface
 {
+    use SpecificationTrait;
+    use ValueComparingSpecificationTrait;
+
     protected float $value;
     /**
      * @param string $type

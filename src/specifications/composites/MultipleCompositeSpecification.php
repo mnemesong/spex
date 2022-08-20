@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\composites;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
@@ -19,11 +20,12 @@ use Webmozart\Assert\Assert;
  */
 class MultipleCompositeSpecification implements SpecificationInterface
 {
+    use SpecificationTrait;
+
     /**
      * @var SpecificationInterface[] $specs
      */
     protected array $specs;
-    protected string $type;
 
     /**
      * @param SpecificationInterface[] $specs
@@ -70,14 +72,6 @@ class MultipleCompositeSpecification implements SpecificationInterface
         $clone = clone $this;
         $clone->specs = array_merge($this->specs, $specs);
         return $clone;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**

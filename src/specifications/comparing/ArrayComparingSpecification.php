@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\comparing;
 
+use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
@@ -19,11 +20,12 @@ use Webmozart\Assert\Assert;
  */
 class ArrayComparingSpecification implements SpecificationInterface
 {
+    use SpecificationTrait;
+
     protected string $field;
     /* @var string[] $value */
     /* @phpstan-ignore-next-line */
     protected array $value;
-    protected string $type;
 
     /**
      * @param string $type
@@ -68,14 +70,6 @@ class ArrayComparingSpecification implements SpecificationInterface
     public function isArrayComparing(): bool
     {
         return true;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**
