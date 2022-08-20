@@ -76,7 +76,7 @@ class StringValueComparingSpecification implements SpecificationInterface
 
     /**
      * @param SpecificationInterface $spec
-     * @return static
+     * @return StringValueComparingSpecification
      */
     public static function assertClass(SpecificationInterface $spec): self
     {

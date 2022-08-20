@@ -68,7 +68,7 @@ class NumericValueComparingSpecification implements SpecificationInterface
 
     /**
      * @param SpecificationInterface $spec
-     * @return static
+     * @return NumericValueComparingSpecification
      */
     public static function assertClass(SpecificationInterface $spec): self
     {

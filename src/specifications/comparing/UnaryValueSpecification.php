@@ -57,7 +57,7 @@ class UnaryValueSpecification implements SpecificationInterface
 
     /**
      * @param SpecificationInterface $spec
-     * @return static
+     * @return UnaryValueSpecification
      */
     public static function assertClass(SpecificationInterface $spec): self
     {

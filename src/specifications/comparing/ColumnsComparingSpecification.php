@@ -95,7 +95,7 @@ class ColumnsComparingSpecification implements SpecificationInterface
 
     /**
      * @param SpecificationInterface $spec
-     * @return static
+     * @return ColumnsComparingSpecification
      */
     public static function assertClass(SpecificationInterface $spec): self
     {

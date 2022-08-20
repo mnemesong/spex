@@ -87,7 +87,7 @@ class MultipleCompositeSpecification implements SpecificationInterface
 
     /**
      * @param SpecificationInterface $spec
-     * @return static
+     * @return MultipleCompositeSpecification
      */
     public static function assertClass(SpecificationInterface $spec): self
     {

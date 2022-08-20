@@ -54,7 +54,7 @@ class UnaryCompositeSpecification implements SpecificationInterface
 
     /**
      * @param SpecificationInterface $spec
-     * @return static
+     * @return UnaryCompositeSpecification
      */
     public static function assertClass(SpecificationInterface $spec): self
     {
