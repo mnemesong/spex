@@ -36,7 +36,7 @@ class StringValueComparingSpecification extends AbstractValueComparingSpecificat
      */
     public function __construct(string $type, string $field, string $value)
     {
-        Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
+        Assert::inArray($type, static::availableTypes(), 'Incorrect type of specification');
         $this->type = $type;
         $this->field = $field;
         $this->value = $value;
@@ -53,7 +53,7 @@ class StringValueComparingSpecification extends AbstractValueComparingSpecificat
     /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_STR_EQUALS,

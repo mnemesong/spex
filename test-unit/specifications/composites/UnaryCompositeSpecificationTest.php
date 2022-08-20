@@ -5,12 +5,12 @@ namespace Mnemesong\SpexUnitTest\specifications\composites;
 
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
 use Mnemesong\Spex\specifications\composites\UnaryCompositeSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\CompositeSpecificationTestTemplate;
+use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
+class UnaryCompositeSpecificationTest extends AbstractSpecificationTestTemplate
 {
     public function testBasics(): void
     {
@@ -40,15 +40,6 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         );
     }
 
-    public function testIsComposite(): void
-    {
-        $spec = new UnaryCompositeSpecification(
-            '!',
-            new NumericValueComparingSpecification('n=', 'age', 25)
-        );
-        $this->assertEquals($spec->isComposite(), true);
-    }
-
     public function testGetType(): void
     {
         $spec = new UnaryCompositeSpecification(
@@ -58,30 +49,4 @@ class UnaryCompositeSpecificationTest extends CompositeSpecificationTestTemplate
         $this->assertEquals($spec->getType(), '!');
     }
 
-    public function testCount(): void
-    {
-        $spec = new UnaryCompositeSpecification(
-            '!',
-            new NumericValueComparingSpecification('n=', 'age', 25)
-        );
-        $this->assertEquals($spec->count(), 1);
-    }
-
-    public function testIsMultiple(): void
-    {
-        $spec = new UnaryCompositeSpecification(
-            '!',
-            new NumericValueComparingSpecification('n=', 'age', 25)
-        );
-        $this->assertEquals($spec->isMultiple(), false);
-    }
-
-    public function testIsUnary(): void
-    {
-        $spec = new UnaryCompositeSpecification(
-            '!',
-            new NumericValueComparingSpecification('n=', 'age', 25)
-        );
-        $this->assertEquals($spec->isUnary(), true);
-    }
 }

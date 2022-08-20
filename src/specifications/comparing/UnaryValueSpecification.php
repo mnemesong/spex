@@ -27,7 +27,7 @@ class UnaryValueSpecification extends AbstractNonCompositeSpecification
      */
     public function __construct(string $type, string $field)
     {
-        Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
+        Assert::inArray($type, static::availableTypes(), 'Incorrect type of specification');
         $this->type = $type;
         $this->field = $field;
     }
@@ -83,7 +83,7 @@ class UnaryValueSpecification extends AbstractNonCompositeSpecification
     /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_EMPTY,

@@ -42,7 +42,7 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
      */
     public function __construct(string $type, string $field1, string $field2)
     {
-        Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
+        Assert::inArray($type, static::availableTypes(), 'Incorrect type of specification');
         $this->field1 = $field1;
         $this->field2 = $field2;
         $this->type = $type;
@@ -107,7 +107,7 @@ class ColumnsComparingSpecification extends AbstractNonCompositeSpecification
     /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_COLUMN_STR_EQUALS,

@@ -29,7 +29,7 @@ class NumericValueComparingSpecification extends AbstractValueComparingSpecifica
      */
     public function __construct(string $type, string $field, float $value)
     {
-        Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
+        Assert::inArray($type, static::availableTypes(), 'Incorrect type of specification');
         Assert::numeric($value, 'Value should be numeric');
         $this->type = $type;
         $this->field = $field;
@@ -47,7 +47,7 @@ class NumericValueComparingSpecification extends AbstractValueComparingSpecifica
     /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_NUM_EQUALS,

@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\composites;
 
-use Mnemesong\Spex\specifications\abstracts\AbstractCompositeSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
@@ -16,7 +15,7 @@ use Webmozart\Assert\Assert;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class UnaryCompositeSpecification extends AbstractCompositeSpecification
+class UnaryCompositeSpecification implements SpecificationInterface
 {
     protected SpecificationInterface $spec;
     protected string $type;
@@ -27,20 +26,10 @@ class UnaryCompositeSpecification extends AbstractCompositeSpecification
      */
     public function __construct(string $type, SpecificationInterface $spec)
     {
-        Assert::inArray($type, static::getAvailableTypes(), "except one of available types: "
-            . implode(", ", static::getAvailableTypes()) . ", get value: " . $type);
+        Assert::inArray($type, static::availableTypes(), "except one of available types: "
+            . implode(", ", static::availableTypes()) . ", get value: " . $type);
         $this->type = $type;
         $this->spec = $spec;
-    }
-
-    /**
-     * Count of child specifications array
-     *
-     * @return int
-     */
-    public function count(): int
-    {
-        return 1;
     }
 
     /**
@@ -60,25 +49,9 @@ class UnaryCompositeSpecification extends AbstractCompositeSpecification
     }
 
     /**
-     * @return bool
-     */
-    public function isUnary(): bool
-    {
-        return true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isMultiple(): bool
-    {
-        return false;
-    }
-
-    /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_NOT,

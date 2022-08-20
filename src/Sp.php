@@ -39,25 +39,25 @@ class Sp
      */
     public static function ex(string $type, $opt1, $opt2 = null): SpecificationInterface
     {
-        if (in_array($type, ArrayComparingSpecification::getAvailableTypes())) {
+        if (in_array($type, ArrayComparingSpecification::availableTypes())) {
             Assert::string($opt1, 'For "' . $type . '" specification first option parameter'
                 . ' should be string');
             Assert::isArray($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be array');
             return new ArrayComparingSpecification($type, $opt1, $opt2);
-        } elseif (in_array($type, ColumnsComparingSpecification::getAvailableTypes())) {
+        } elseif (in_array($type, ColumnsComparingSpecification::availableTypes())) {
             Assert::string($opt1, 'For "' . $type . '" specification first option parameter'
                 . ' should be string');
             Assert::string($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be string');
             return new ColumnsComparingSpecification($type, $opt1, $opt2);
-        } elseif (in_array($type, NumericValueComparingSpecification::getAvailableTypes())) {
+        } elseif (in_array($type, NumericValueComparingSpecification::availableTypes())) {
             Assert::string($opt1, 'For "' . $type . '" specification first option parameter'
                 . ' should be string');
             Assert::numeric($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be numeric');
             return new NumericValueComparingSpecification($type, $opt1, floatval($opt2));
-        } elseif (in_array($type, StringValueComparingSpecification::getAvailableTypes())) {
+        } elseif (in_array($type, StringValueComparingSpecification::availableTypes())) {
             Assert::string($opt1, 'For "' . $type . '" specification first option parameter'
                 . ' should be string');
             if (is_numeric($opt2)) {
@@ -66,13 +66,13 @@ class Sp
             Assert::string($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be string');
             return new StringValueComparingSpecification($type, $opt1, $opt2);
-        } elseif (in_array($type, UnaryValueSpecification::getAvailableTypes())) {
+        } elseif (in_array($type, UnaryValueSpecification::availableTypes())) {
             Assert::null($opt2, 'For "' . $type . '" specification second option parameter'
                 . ' should be null');
             Assert::string($opt1, 'For "' . $type . '" specification first option parameter'
                 . ' should be string');
             return new UnaryValueSpecification($type, $opt1);
-        } elseif (in_array($type, MultipleCompositeSpecification::getAvailableTypes())) {
+        } elseif (in_array($type, MultipleCompositeSpecification::availableTypes())) {
             Assert::isArray($opt1);
             Assert::allObject($opt1);
             Assert::null($opt2, 'For "' . $type . '" specification second option parameter'
@@ -83,7 +83,7 @@ class Sp
                 . 'implemented objects. Or both parameters should be SpecificationInterface '
                 . 'implemented objects.');
             return new MultipleCompositeSpecification($type, $opt1);
-        } elseif (in_array($type, UnaryCompositeSpecification::getAvailableTypes())) {
+        } elseif (in_array($type, UnaryCompositeSpecification::availableTypes())) {
             Assert::subclassOf($opt1, SpecificationInterface::class, 'For "' . $type
                 . '" specification first option parameter should be SpecificationInterface '
                 . 'implemented object.');
@@ -106,9 +106,9 @@ class Sp
     {
         Assert::inArray(
             $composeOperator,
-            MultipleCompositeSpecification::getAvailableTypes(),
+            MultipleCompositeSpecification::availableTypes(),
             'Invalid merge operator: ' . $composeOperator . '. Except one of: '
-            . implode(', ', MultipleCompositeSpecification::getAvailableTypes()));
+            . implode(', ', MultipleCompositeSpecification::availableTypes()));
         if(empty($structure->toArray())) {
             return null;
         }

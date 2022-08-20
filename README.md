@@ -17,6 +17,7 @@
 <h3>ENG:</h3>
 <p>The package provides objects and an interface for expression of specifications (describes the conditions for fetching 
 records from storage). For quick construction, use Sp::ex() builder.</p>
+
 <h3>RUS:</h3>
 <p>Пакет предоставляет объекты и интерфейс для выражения спецификаций (описывают услоние выборки записей из хранилища).
 Для быстрого построения используется билдер Sp::ex()</p>

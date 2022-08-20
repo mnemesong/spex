@@ -7,12 +7,12 @@ use Mnemesong\Spex\specifications\comparing\ArrayComparingSpecification;
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
 use Mnemesong\Spex\specifications\comparing\StringValueComparingSpecification;
 use Mnemesong\Spex\specifications\composites\MultipleCompositeSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\CompositeSpecificationTestTemplate;
+use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTemplate
+class MultipleCompositeSpecificationTest extends AbstractSpecificationTestTemplate
 {
 
     public function testBasics(): void
@@ -52,15 +52,6 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         $spec = new MultipleCompositeSpecification('and', [
             new NumericValueComparingSpecification('n>', 'age', 18),
         ]);
-    }
-
-    public function testIsComposite(): void
-    {
-        $spec = new MultipleCompositeSpecification('and', [
-            new NumericValueComparingSpecification('n>', 'age', 18),
-            new ArrayComparingSpecification('in', 'name', ['Sarah', 'Viola'])
-        ]);
-        $this->assertEquals($spec->isComposite(), true);
     }
 
     public function testWithNewOne(): void
@@ -125,40 +116,4 @@ class MultipleCompositeSpecificationTest extends CompositeSpecificationTestTempl
         $this->assertEquals($spec->getType(), 'or');
     }
 
-    public function testCount(): void
-    {
-        $spec = new MultipleCompositeSpecification('and', [
-            new NumericValueComparingSpecification('n>', 'age', 18),
-            new ArrayComparingSpecification('in', 'name', ['Sarah', 'Viola'])
-        ]);
-        $this->assertEquals($spec->count(), 2);
-        $spec = new MultipleCompositeSpecification('or', [
-            new NumericValueComparingSpecification('n>', 'age', 18),
-            new ArrayComparingSpecification('in', 'name', ['Sarah', 'Viola']),
-            new NumericValueComparingSpecification('n>', 'seconds', 153),
-            new MultipleCompositeSpecification('or', [
-                new NumericValueComparingSpecification('n>', 'year', 1852),
-                new ArrayComparingSpecification('in', 'name', ['Sarah', 'Viola']),
-            ])
-        ]);
-        $this->assertEquals($spec->count(), 4);
-    }
-
-    public function testIsMultiple(): void
-    {
-        $spec = new MultipleCompositeSpecification('and', [
-            new NumericValueComparingSpecification('n>', 'age', 18),
-            new ArrayComparingSpecification('in', 'name', ['Sarah', 'Viola'])
-        ]);
-        $this->assertEquals($spec->isMultiple(), true);
-    }
-
-    public function testIsUnary(): void
-    {
-        $spec = new MultipleCompositeSpecification('and', [
-            new NumericValueComparingSpecification('n>', 'age', 18),
-            new ArrayComparingSpecification('in', 'name', ['Sarah', 'Viola'])
-        ]);
-        $this->assertEquals($spec->isUnary(), false);
-    }
 }

@@ -10,7 +10,5 @@ use PHPUnit\Framework\TestCase;
  */
 abstract class AbstractSpecificationTestTemplate extends TestCase
 {
-    abstract public function testIsComposite(): void;
-
     abstract public function testGetType(): void;
 }

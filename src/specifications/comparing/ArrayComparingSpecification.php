@@ -32,7 +32,7 @@ class ArrayComparingSpecification extends AbstractNonCompositeSpecification
      */
     public function __construct(string $type, string $field, array $value)
     {
-        Assert::inArray($type, static::getAvailableTypes(), 'Incorrect type of specification');
+        Assert::inArray($type, static::availableTypes(), 'Incorrect type of specification');
         $this->field = $field;
         $this->value = array_map(fn($item) => (strval($item)), $value);
         $this->type = $type;
@@ -97,7 +97,7 @@ class ArrayComparingSpecification extends AbstractNonCompositeSpecification
     /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_IN,

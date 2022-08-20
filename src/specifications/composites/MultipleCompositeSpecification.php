@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\composites;
 
-use Mnemesong\Spex\specifications\abstracts\AbstractCompositeSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
@@ -18,7 +17,7 @@ use Webmozart\Assert\Assert;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class MultipleCompositeSpecification extends AbstractCompositeSpecification
+class MultipleCompositeSpecification implements SpecificationInterface
 {
     /**
      * @var SpecificationInterface[] $specs
@@ -31,8 +30,8 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
      */
     public function __construct(string $type, array $specs)
     {
-        Assert::inArray($type, static::getAvailableTypes(), "Incorrect type of operation. "
-            . "expect one of: " . implode(", ", static::getAvailableTypes()));
+        Assert::inArray($type, static::availableTypes(), "Incorrect type of operation. "
+            . "expect one of: " . implode(", ", static::availableTypes()));
         Assert::minCount($specs, 2, '"And" and "Or" specification should contains 2 or more child '
             . 'specifications');
         /* @phpstan-ignore-next-line */
@@ -40,16 +39,6 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
             'Every object should be class implemented SpecificationInterface');
         $this->type = $type;
         $this->specs = $specs;
-    }
-
-    /**
-     * Count of child specifications array
-     *
-     * @return int
-     */
-    public function count(): int
-    {
-        return count($this->specs);
     }
 
     /**
@@ -92,25 +81,9 @@ class MultipleCompositeSpecification extends AbstractCompositeSpecification
     }
 
     /**
-     * @return bool
-     */
-    public function isUnary(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isMultiple(): bool
-    {
-        return true;
-    }
-
-    /**
      * @return string[]
      */
-    static function getAvailableTypes(): array
+    static function availableTypes(): array
     {
         return [
             self::TYPE_AND,
