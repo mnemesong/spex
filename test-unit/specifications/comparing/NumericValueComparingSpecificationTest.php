@@ -4,12 +4,13 @@ declare(strict_types=1);
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
+use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
 use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTestTemplate;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class NumericValueComparingSpecificationTest extends NonCompositeSpecificationTestTemplate
+class NumericValueComparingSpecificationTest extends AbstractSpecificationTestTemplate
 {
     public function testBasics1(): void
     {
@@ -45,12 +46,6 @@ class NumericValueComparingSpecificationTest extends NonCompositeSpecificationTe
         $spec = new NumericValueComparingSpecification('or', 'age', 11.11);
     }
 
-    public function testIsComposite(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isComposite(), false);
-    }
-
     public function testGetType(): void
     {
         $spec = new NumericValueComparingSpecification('n=', 'age', 22);
@@ -69,41 +64,5 @@ class NumericValueComparingSpecificationTest extends NonCompositeSpecificationTe
         $this->assertEquals($spec->getType(), 'n>');
         $spec = new NumericValueComparingSpecification('n!>', 'age', 22);
         $this->assertEquals($spec->getType(), 'n!>');
-    }
-
-    public function testIsUnary(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isUnary(), false);
-    }
-
-    public function testIsValueComparing(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isValueComparing(), true);
-    }
-
-    public function testIsFieldsComparing(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isFieldsComparing(), false);
-    }
-
-    public function testIsArrayComparing(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isArrayComparing(), false);
-    }
-
-    public function testNumericComparing(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isNumericComparing(), true);
-    }
-
-    public function testStringComparing(): void
-    {
-        $spec = new NumericValueComparingSpecification('n<', 'age', 22);
-        $this->assertEquals($spec->isStringComparing(), false);
     }
 }

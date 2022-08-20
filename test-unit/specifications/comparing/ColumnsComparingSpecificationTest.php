@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
 use Mnemesong\Spex\specifications\comparing\ColumnsComparingSpecification;
-use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTestTemplate;
+use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTemplate
+class ColumnsComparingSpecificationTest extends AbstractSpecificationTestTemplate
 {
     public function testBasics(): void
     {
@@ -29,12 +29,6 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
     {
         $this->expectException(\InvalidArgumentException::class);
         $spec = new ColumnsComparingSpecification('and', 'startDate', 'finishDate');
-    }
-
-    public function testIsComposite(): void
-    {
-        $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
-        $this->assertEquals($spec->isComposite(), false);
     }
 
     public function testGetType(): void
@@ -77,27 +71,4 @@ class ColumnsComparingSpecificationTest extends NonCompositeSpecificationTestTem
         $this->assertEquals($spec->getType(), 'cn<=');
     }
 
-    public function testIsUnary(): void
-    {
-        $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
-        $this->assertEquals($spec->isUnary(), false);
-    }
-
-    public function testIsValueComparing(): void
-    {
-        $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
-        $this->assertEquals($spec->isValueComparing(), false);
-    }
-
-    public function testIsFieldsComparing(): void
-    {
-        $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
-        $this->assertEquals($spec->isFieldsComparing(), true);
-    }
-
-    public function testIsArrayComparing(): void
-    {
-        $spec = new ColumnsComparingSpecification('cs=', 'startDate', 'finishDate');
-        $this->assertEquals($spec->isArrayComparing(), false);
-    }
 }

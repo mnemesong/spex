@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\comparing;
 
-use Mnemesong\Spex\specifications\abstracts\AbstractNonCompositeSpecification;
+use Mnemesong\Spex\specifications\SpecificationInterface;
 use Webmozart\Assert\Assert;
 
 /**
@@ -16,7 +16,7 @@ use Webmozart\Assert\Assert;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class UnaryValueSpecification extends AbstractNonCompositeSpecification
+class UnaryValueSpecification implements SpecificationInterface
 {
     protected string $field;
     protected string $type;

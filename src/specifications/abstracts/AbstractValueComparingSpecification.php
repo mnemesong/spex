@@ -3,10 +3,12 @@ declare(strict_types=1);
 
 namespace Mnemesong\Spex\specifications\abstracts;
 
+use Mnemesong\Spex\specifications\SpecificationInterface;
+
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-abstract class AbstractValueComparingSpecification extends AbstractNonCompositeSpecification
+abstract class AbstractValueComparingSpecification implements SpecificationInterface
 {
     protected string $field;
     protected string $type;

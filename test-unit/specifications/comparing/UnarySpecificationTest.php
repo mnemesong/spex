@@ -4,12 +4,13 @@ declare(strict_types=1);
 namespace Mnemesong\SpexUnitTest\specifications\comparing;
 
 use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
+use Mnemesong\SpexUnitTest\specifications\abstracts\AbstractSpecificationTestTemplate;
 use Mnemesong\SpexUnitTest\specifications\abstracts\NonCompositeSpecificationTestTemplate;
 
 /**
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class UnarySpecificationTest extends NonCompositeSpecificationTestTemplate
+class UnarySpecificationTest extends AbstractSpecificationTestTemplate
 {
     public function testBasics(): void
     {
@@ -30,12 +31,6 @@ class UnarySpecificationTest extends NonCompositeSpecificationTestTemplate
         $spec = new UnaryValueSpecification('!=', 'url');
     }
 
-    public function testIsComposite(): void
-    {
-        $spec = new UnaryValueSpecification('empty', 'url');
-        $this->assertEquals($spec->isComposite(), false);
-    }
-
     public function testGetType(): void
     {
         $spec = new UnaryValueSpecification('empty', 'url');
@@ -48,27 +43,4 @@ class UnarySpecificationTest extends NonCompositeSpecificationTestTemplate
         $this->assertEquals($spec->getType(), '!null');
     }
 
-    public function testIsUnary(): void
-    {
-        $spec = new UnaryValueSpecification('empty', 'url');
-        $this->assertEquals($spec->isUnary(), true);
-    }
-
-    public function testIsValueComparing(): void
-    {
-        $spec = new UnaryValueSpecification('empty', 'url');
-        $this->assertEquals($spec->isValueComparing(), false);
-    }
-
-    public function testIsFieldsComparing(): void
-    {
-        $spec = new UnaryValueSpecification('empty', 'url');
-        $this->assertEquals($spec->isFieldsComparing(), false);
-    }
-
-    public function testIsArrayComparing(): void
-    {
-        $spec = new UnaryValueSpecification('empty', 'url');
-        $this->assertEquals($spec->isArrayComparing(), false);
-    }
 }
