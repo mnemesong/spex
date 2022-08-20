@@ -7,7 +7,9 @@ use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\ArrayComparingSpecification;
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
 use Mnemesong\Spex\specifications\comparing\StringValueComparingSpecification;
+use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
 use Mnemesong\Spex\specifications\composites\MultipleCompositeSpecification;
+use Mnemesong\SpexUnitTest\specifications\abstracts\SpecificationTestTrait;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,8 +17,11 @@ use PHPUnit\Framework\TestCase;
  */
 class MultipleCompositeSpecificationTest extends TestCase
 {
-    use SpecificationTrait;
+    use SpecificationTestTrait;
 
+    /**
+     * @return void
+     */
     public function testBasics(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
@@ -30,6 +35,9 @@ class MultipleCompositeSpecificationTest extends TestCase
         ]);
     }
 
+    /**
+     * @return void
+     */
     public function testConstructExceptions1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -39,6 +47,9 @@ class MultipleCompositeSpecificationTest extends TestCase
         ]);
     }
 
+    /**
+     * @return void
+     */
     public function testConstructExceptions2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -48,6 +59,9 @@ class MultipleCompositeSpecificationTest extends TestCase
         ]);
     }
 
+    /**
+     * @return void
+     */
     public function testConstructExceptions3(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -56,6 +70,9 @@ class MultipleCompositeSpecificationTest extends TestCase
         ]);
     }
 
+    /**
+     * @return void
+     */
     public function testWithNewOne(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
@@ -78,6 +95,9 @@ class MultipleCompositeSpecificationTest extends TestCase
         ], $spec->getSpecifications());
     }
 
+    /**
+     * @return void
+     */
     public function testWithNewMany(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
@@ -104,6 +124,9 @@ class MultipleCompositeSpecificationTest extends TestCase
         ], $spec->getSpecifications());
     }
 
+    /**
+     * @return void
+     */
     public function testGetType(): void
     {
         $spec = new MultipleCompositeSpecification('and', [
@@ -118,4 +141,26 @@ class MultipleCompositeSpecificationTest extends TestCase
         $this->assertEquals($spec->getType(), 'or');
     }
 
+    /**
+     * @return void
+     */
+    public function testAssertClass(): void
+    {
+        $spec = new MultipleCompositeSpecification('and', [
+            new UnaryValueSpecification('empty', 'data'),
+            new UnaryValueSpecification('!null', 'isRegistered')
+        ]);
+        $spec = MultipleCompositeSpecification::assertClass($spec);
+        $this->assertTrue(is_a($spec, MultipleCompositeSpecification::class));
+    }
+
+    /**
+     * @return void
+     */
+    public function testAssertClassException(): void
+    {
+        $spec = new UnaryValueSpecification('empty', 'data');
+        $this->expectException(\InvalidArgumentException::class);
+        $spec = MultipleCompositeSpecification::assertClass($spec);
+    }
 }

@@ -18,7 +18,7 @@ use Webmozart\Assert\Assert;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class ArrayComparingSpecification implements SpecificationInterface
+final class ArrayComparingSpecification implements SpecificationInterface
 {
     use SpecificationTrait;
 
@@ -59,11 +59,22 @@ class ArrayComparingSpecification implements SpecificationInterface
     /**
      * @return string[]
      */
-    static function availableTypes(): array
+    public static function availableTypes(): array
     {
         return [
             self::TYPE_IN,
             self::TYPE_NOT_IN
         ];
+    }
+
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, ArrayComparingSpecification::class);
+        /* @var ArrayComparingSpecification $spec */
+        return $spec;
     }
 }

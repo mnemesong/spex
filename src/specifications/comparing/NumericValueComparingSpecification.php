@@ -66,4 +66,14 @@ class NumericValueComparingSpecification implements SpecificationInterface
         ];
     }
 
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, NumericValueComparingSpecification::class);
+        /* @var NumericValueComparingSpecification $spec */
+        return $spec;
+    }
 }

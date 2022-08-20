@@ -74,4 +74,14 @@ class StringValueComparingSpecification implements SpecificationInterface
         ];
     }
 
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, StringValueComparingSpecification::class);
+        /* @var StringValueComparingSpecification $spec */
+        return $spec;
+    }
 }

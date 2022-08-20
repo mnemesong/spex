@@ -78,4 +78,10 @@ interface SpecificationInterface
      * @return string[]
      */
     public static function availableTypes(): array;
+
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self;
 }

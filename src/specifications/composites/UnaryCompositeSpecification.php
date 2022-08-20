@@ -51,4 +51,15 @@ class UnaryCompositeSpecification implements SpecificationInterface
             self::TYPE_NOT,
         ];
     }
+
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, UnaryCompositeSpecification::class);
+        /* @var UnaryCompositeSpecification $spec */
+        return $spec;
+    }
 }

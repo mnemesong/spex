@@ -5,7 +5,9 @@ namespace Mnemesong\SpexUnitTest\specifications\composites;
 
 use Mnemesong\Spex\specifications\abstracts\SpecificationTrait;
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
+use Mnemesong\Spex\specifications\comparing\UnaryValueSpecification;
 use Mnemesong\Spex\specifications\composites\UnaryCompositeSpecification;
+use Mnemesong\SpexUnitTest\specifications\abstracts\SpecificationTestTrait;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,8 +15,11 @@ use PHPUnit\Framework\TestCase;
  */
 class UnaryCompositeSpecificationTest extends TestCase
 {
-    use SpecificationTrait;
+    use SpecificationTestTrait;
 
+    /**
+     * @return void
+     */
     public function testBasics(): void
     {
         $spec = new UnaryCompositeSpecification(
@@ -25,6 +30,9 @@ class UnaryCompositeSpecificationTest extends TestCase
         $this->assertEquals($spec->getSpec(), new NumericValueComparingSpecification('n=', 'age', 25));
     }
 
+    /**
+     * @return void
+     */
     public function testConstructorException1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -34,6 +42,9 @@ class UnaryCompositeSpecificationTest extends TestCase
         );
     }
 
+    /**
+     * @return void
+     */
     public function testConstructorException2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -43,6 +54,9 @@ class UnaryCompositeSpecificationTest extends TestCase
         );
     }
 
+    /**
+     * @return void
+     */
     public function testGetType(): void
     {
         $spec = new UnaryCompositeSpecification(
@@ -52,4 +66,23 @@ class UnaryCompositeSpecificationTest extends TestCase
         $this->assertEquals($spec->getType(), '!');
     }
 
+    /**
+     * @return void
+     */
+    public function testAssertClass(): void
+    {
+        $spec = new UnaryCompositeSpecification('!', new UnaryValueSpecification('null', 'date'));
+        $spec = UnaryCompositeSpecification::assertClass($spec);
+        $this->assertTrue(is_a($spec, UnaryCompositeSpecification::class));
+    }
+
+    /**
+     * @return void
+     */
+    public function testAssertClassException(): void
+    {
+        $spec = new UnaryValueSpecification('null', 'date');
+        $this->expectException(\InvalidArgumentException::class);
+        $spec = UnaryCompositeSpecification::assertClass($spec);
+    }
 }

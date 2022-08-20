@@ -92,4 +92,15 @@ class ColumnsComparingSpecification implements SpecificationInterface
             self::TYPE_COLUMN_NUM_EQUALS_OR_MORE,
         ];
     }
+
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, ColumnsComparingSpecification::class);
+        /* @var ColumnsComparingSpecification $spec */
+        return $spec;
+    }
 }

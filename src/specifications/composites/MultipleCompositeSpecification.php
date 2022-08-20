@@ -84,4 +84,15 @@ class MultipleCompositeSpecification implements SpecificationInterface
             self::TYPE_OR,
         ];
     }
+
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, MultipleCompositeSpecification::class);
+        /* @var MultipleCompositeSpecification $spec */
+        return $spec;
+    }
 }

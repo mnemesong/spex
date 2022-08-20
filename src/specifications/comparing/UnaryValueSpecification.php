@@ -54,4 +54,15 @@ class UnaryValueSpecification implements SpecificationInterface
             self::TYPE_NOT_NULL,
         ];
     }
+
+    /**
+     * @param SpecificationInterface $spec
+     * @return static
+     */
+    public static function assertClass(SpecificationInterface $spec): self
+    {
+        Assert::isAOf($spec, UnaryValueSpecification::class);
+        /* @var UnaryValueSpecification $spec */
+        return $spec;
+    }
 }
