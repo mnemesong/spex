@@ -51,38 +51,6 @@ class ColumnsComparingSpecification implements SpecificationInterface
     }
 
     /**
-     * @return bool
-     */
-    public function isUnary(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isValueComparing(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isFieldsComparing(): bool
-    {
-        return true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isArrayComparing(): bool
-    {
-        return false;
-    }
-
-    /**
      * @return string
      */
     public function getField1(): string

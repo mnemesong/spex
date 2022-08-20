@@ -41,38 +41,6 @@ class ArrayComparingSpecification implements SpecificationInterface
     }
 
     /**
-     * @return bool
-     */
-    public function isUnary(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isValueComparing(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isFieldsComparing(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isArrayComparing(): bool
-    {
-        return true;
-    }
-
-    /**
      * @return string[]
      */
     public function getValue(): array

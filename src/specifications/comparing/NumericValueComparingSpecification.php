@@ -66,19 +66,4 @@ class NumericValueComparingSpecification implements SpecificationInterface
         ];
     }
 
-    /**
-     * @return bool
-     */
-    public function isNumericComparing(): bool
-    {
-        return true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isStringComparing(): bool
-    {
-        return false;
-    }
 }
