@@ -13,7 +13,8 @@
         "psr-4": {
             "Mnemesong\\Spex\\": "src/",
             "Mnemesong\\SpexUnitTest\\": "test-unit",
-            "Mnemesong\\SpexStubs\\": "stubs"
+            "Mnemesong\\SpexStubs\\": "stubs",
+            "Mnemesong\\SpexTestHelpers\\": "test-helpers"
         }
     },
     "authors": [
